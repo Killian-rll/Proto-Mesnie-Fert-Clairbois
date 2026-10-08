@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://killian-rll.github.io/Proto-Mesnie-Fert-Clairbois/sitemap.xml
