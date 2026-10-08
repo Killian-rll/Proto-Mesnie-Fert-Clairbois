@@ -1,6 +1,3 @@
-/* ==========================================================================
-   La Mesnie de la Ferté-Clairbois — scripts du site (JavaScript natif)
-   ========================================================================== */
 (function () {
   "use strict";
 
@@ -10,11 +7,10 @@
   const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
   const stockage = {
     lire(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
-    ecrire(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* navigation privée */ } }
+    ecrire(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
   };
   const animationsReduites = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---------- Taille du texte (bouton « Aa » : normal → grand → très grand) ---------- */
   const libellesTaille = ["Agrandir le texte", "Agrandir encore le texte", "Revenir à la taille normale"];
   const appliquerTaille = (t) => {
     document.documentElement.dataset.taille = t;
@@ -26,7 +22,6 @@
     stockage.ecrire("taille", t); appliquerTaille(t);
   }));
 
-  /* ---------- Menu mobile ---------- */
   const burger = $(".burger");
   const nav = $("#navigation");
   const mobile = window.matchMedia("(max-width: 1100px)");
@@ -42,7 +37,6 @@
   });
   mobile.addEventListener("change", (m) => !m.matches && fermerMenu());
 
-  /* ---------- Sous-menu « Les Féodales » ---------- */
   $$(".sous-menu").forEach((sm) => {
     const bouton = $(".nav__fleche", sm);
     const ouvrir = (oui) => { sm.classList.toggle("is-open", oui); bouton.setAttribute("aria-expanded", String(oui)); };
@@ -58,7 +52,6 @@
     fermerMenu();
   });
 
-  /* ---------- En-tête au défilement + bouton « haut de page » ---------- */
   const header = $(".header");
   const haut = $(".haut");
   const surDefilement = () => {
@@ -69,7 +62,6 @@
   surDefilement();
   haut && haut.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
-  /* ---------- Diaporama du héros ---------- */
   const diapos = $$(".hero__diapos img");
   if (diapos.length > 1 && !animationsReduites) {
     let i = 0;
@@ -80,9 +72,6 @@
     }, 6500);
   }
 
-  /* ======================================================================
-     CALENDRIER : 2e week-end de chaque mois de la saison
-     ====================================================================== */
   const MOIS = (CFG.mois || [4, 5, 6, 7, 8]).slice().sort((a, b) => a - b);
   const pad = (n) => String(n).padStart(2, "0");
   const heure = (txt, def) => (txt || def).split(":").map(Number);
@@ -154,7 +143,6 @@
     $$("[data-ics-prochaine]").forEach((b) => (b.dataset.ics = prochaine.cle));
   }
 
-  // Compte à rebours
   const compte = $("[data-compte]");
   if (compte && prochaine) {
     const c = (k) => $(`[data-c=${k}]`, compte);
@@ -175,7 +163,6 @@
     tic();
   }
 
-  // Fichier agenda (.ics) — Google Agenda, Outlook, iPhone
   document.addEventListener("click", (e) => {
     const b = e.target.closest("[data-ics]");
     if (!b || !b.dataset.ics) return;
@@ -199,7 +186,6 @@
     setTimeout(() => URL.revokeObjectURL(lien.href), 2000);
   });
 
-  /* ---------- Partager une date (menu natif du téléphone, sinon copie du lien) ---------- */
   const toast = (texte) => {
     let t = $(".toast");
     if (!t) { t = document.createElement("div"); t.className = "toast"; t.setAttribute("role", "status"); document.body.appendChild(t); }
@@ -214,14 +200,13 @@
     const url = new URL("feodales.html", location.href).href;
     const texte = `Les Féodales de Clairbois, fête médiévale le ${datesTexte(f)} au Domaine de la Ferté-Clairbois (Sainte-Suzanne-et-Chammes).`;
     if (navigator.share) {
-      try { await navigator.share({ title: "Les Féodales de Clairbois", text: texte, url }); } catch (err) { /* partage annulé */ }
+      try { await navigator.share({ title: "Les Féodales de Clairbois", text: texte, url }); } catch (err) {}
       return;
     }
     try { await navigator.clipboard.writeText(`${texte} ${url}`); toast("Lien copié : vous pouvez le coller dans un message."); }
     catch (err) { window.prompt("Copiez ce lien pour le partager :", url); }
   });
 
-  /* ---------- Filtres (galerie, actualités) ---------- */
   $$("[data-filtres]").forEach((groupe) => {
     const cible = $(groupe.dataset.filtres);
     if (!cible) return;
@@ -234,7 +219,6 @@
     });
   });
 
-  /* ---------- Visionneuse de photos ---------- */
   const vis = $(".visionneuse");
   if (vis) {
     const img = $("img", vis), leg = $("figcaption", vis);
@@ -268,7 +252,6 @@
     });
   }
 
-  /* ---------- Carte chargée seulement au clic (RGPD) ---------- */
   $$("[data-carte]").forEach((zone) => {
     const b = $("button", zone);
     b && b.addEventListener("click", () => {
@@ -277,10 +260,6 @@
     });
   });
 
-  /* ---------- Formulaires ----------
-     Sans serveur : si l'attribut action est vide, le message s'ouvre dans la
-     messagerie du visiteur. Pour un envoi direct, renseigner l'adresse d'un
-     service (Formspree, Web3Forms…) dans l'attribut action du formulaire. */
   const emailValide = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
   $$("form[data-formulaire]").forEach((form) => {
     const msg = $(".message-form", form);
@@ -326,14 +305,12 @@
     });
   });
 
-  /* ---------- Sujet pré-rempli (contact.html?sujet=exposant) ---------- */
   const sujetUrl = new URLSearchParams(location.search).get("sujet");
   const selectSujet = $("#c-sujet");
   if (sujetUrl && selectSujet && $(`option[value="${CSS.escape(sujetUrl)}"]`, selectSujet)) selectSujet.value = sujetUrl;
 
   $$("[data-annee]").forEach((el) => (el.textContent = new Date().getFullYear()));
 
-  /* ---------- Silhouettes cachées (easter eggs) ---------- */
   const formes = ["heaume", "banniere", "tour", "bouclier", "chateau", "fleur", "chevalier", "cavalier"];
   const graine = [...location.pathname].reduce((s, ch) => s + ch.charCodeAt(0), 0);
   const recoins = [
@@ -351,21 +328,17 @@
   };
   $$("main > section.section:not(.section--serree):not(#partenaires)").forEach((s, i) => {
     const clair = s.classList.contains("section--sombre") ? "-clair" : "";
-    // 1. sur le bord, à chaque section (gauche / droite en alternance)
     cacher(s, `cache--${(graine + i) % 2 ? "gauche" : "droite"}${i % 3 === 1 ? " cache--haut" : ""}`,
       formes[(graine + i * 3) % formes.length] + clair);
-    // 2. en filigrane dans un recoin, une section sur deux
     if ((graine + i) % 2 === 0) {
       const p = recoins[(graine + i * 5) % recoins.length];
       const { r, ...pos } = p;
       cacher(s, "cache--dedans", formes[(graine + i * 3 + 4) % formes.length] + clair, { ...pos, "--r": r + "deg" });
     }
   });
-  // 3. dans le pied de page
   const pied = $(".footer");
   pied && cacher(pied, "cache--pied", "heaume-clair");
 
-  /* ---------- Apparition douce au défilement ---------- */
   const elts = $$(".revele");
   if (!("IntersectionObserver" in window)) elts.forEach((e) => e.classList.add("is-visible"));
   else {

@@ -1,8 +1,3 @@
-/* ==========================================================================
-   La Mesnie de la Ferté-Clairbois — Les Féodales de Clairbois
-   Design clair et aéré, touches médiévales (gothique, or, gueules)
-   ========================================================================== */
-
 :root {
   --bg: #fbf8f3;
   --bg-2: #f4eee4;
@@ -72,7 +67,6 @@ p:last-child { margin-bottom: 0; }
 
 .icon { width: 1.25em; height: 1.25em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
 
-/* ---------- Boutons ---------- */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
   font: 600 1rem/1 var(--f-sans); letter-spacing: .01em; text-decoration: none;
@@ -94,7 +88,6 @@ p:last-child { margin-bottom: 0; }
 .lien .icon { transition: transform .2s; }
 .lien:hover .icon { transform: translateX(4px); }
 
-/* ---------- En-tête ---------- */
 .header {
   position: sticky; top: 0; z-index: 100;
   background: rgba(251, 248, 243, .92); backdrop-filter: saturate(1.4) blur(10px);
@@ -155,7 +148,7 @@ p:last-child { margin-bottom: 0; }
 .burger[aria-expanded="true"] .burger__barres span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
 @media (max-width: 1100px) {
-  /* backdrop-filter piégerait le menu en position fixe dans l'en-tête */
+
   .header { backdrop-filter: none; background: var(--bg); }
   .burger { display: grid; }
   .header__cta { display: none; }
@@ -187,7 +180,6 @@ p:last-child { margin-bottom: 0; }
   .taille { width: 42px; height: 42px; }
 }
 
-/* ---------- Titres de section ---------- */
 .surtitre {
   display: inline-block; font: 600 .82rem/1.2 var(--f-sans); letter-spacing: .2em; text-transform: uppercase;
   color: var(--red); margin-bottom: 1rem;
@@ -206,7 +198,6 @@ p:last-child { margin-bottom: 0; }
 .section--sombre .entete p { color: #b9ad9f; }
 .section--serree { padding: calc(var(--section) * .6) 0; }
 
-/* ---------- Héros ---------- */
 .hero {
   position: relative; isolation: isolate; overflow: hidden; color: #fff; text-align: center;
   min-height: min(calc(100svh - var(--header-h)), 880px); display: flex; flex-direction: column;
@@ -255,8 +246,6 @@ p:last-child { margin-bottom: 0; }
   .hero__embleme { height: 72px; }
 }
 
-
-/* ---------- Infos (horaires, entrée, lieu) ---------- */
 .infos-bande { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.5rem; }
 .info-carte { display: flex; gap: 1rem; align-items: flex-start; padding: 1.5rem; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); }
 .info-carte > .icon { width: 48px; height: 48px; padding: 12px; border-radius: var(--r); background: var(--red-soft); color: var(--red); }
@@ -266,7 +255,6 @@ p:last-child { margin-bottom: 0; }
 @media (max-width: 900px) { .infos-bande { grid-template-columns: 1fr; } }
 .actions-centre { display: flex; flex-wrap: wrap; justify-content: center; gap: .9rem; margin-top: 2.5rem; }
 
-/* ---------- Programme (grille photo) ---------- */
 .bento { display: grid; grid-template-columns: 1.3fr 1fr 1fr; grid-template-rows: 280px 280px; gap: 1rem; }
 .tuile {
   position: relative; overflow: hidden; border-radius: var(--r); isolation: isolate; color: #fff; text-decoration: none;
@@ -292,7 +280,6 @@ p:last-child { margin-bottom: 0; }
   .bento .tuile:first-child, .bento .tuile:nth-child(4) { grid-column: auto; }
 }
 
-/* ---------- Bloc deux colonnes ---------- */
 .duo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 6vw, 5.5rem); align-items: center; }
 .duo--inverse > :first-child { order: 2; }
 @media (max-width: 900px) { .duo { grid-template-columns: 1fr; } .duo--inverse > :first-child { order: 0; } }
@@ -313,7 +300,6 @@ p:last-child { margin-bottom: 0; }
 .liste-coches li { display: flex; gap: .7rem; align-items: flex-start; color: var(--ink); }
 .liste-coches .icon { color: var(--gold); margin-top: .25rem; }
 
-/* ---------- Cartes génériques ---------- */
 .cartes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .cartes--2 { grid-template-columns: repeat(2, 1fr); }
 .cartes--2 .carte { padding: 1.5rem; }
@@ -335,7 +321,6 @@ p:last-child { margin-bottom: 0; }
 .etiquette { display: inline-block; font-size: .8rem; font-weight: 600; padding: .3rem .7rem; border-radius: 999px; background: var(--bg-2); color: var(--ink-2); }
 .etiquette--rouge { background: var(--red-soft); color: var(--red); }
 
-/* ---------- Actualités ---------- */
 .actu { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: transform .25s, box-shadow .25s; }
 .actu:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
 .actu__image { aspect-ratio: 16 / 10; overflow: hidden; background: var(--bg-2); }
@@ -355,13 +340,11 @@ p:last-child { margin-bottom: 0; }
 .actu--une .actu__corps .btn { align-self: flex-start; margin-top: .8rem; }
 @media (max-width: 760px) { .actu--une { grid-template-columns: 1fr; } .actu--une .actu__image { min-height: 220px; } }
 
-/* ---------- Filtres ---------- */
 .filtres { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; margin-bottom: 2.5rem; }
 .filtre { font: 500 1rem var(--f-sans); cursor: pointer; min-height: 46px; padding: .55rem 1.2rem; border-radius: 999px; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); transition: all .2s; }
 .filtre:hover { border-color: var(--ink); }
 .filtre[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: #fff; }
 
-/* ---------- Galerie ---------- */
 .galerie { columns: 3 300px; column-gap: 1rem; }
 .galerie__item { break-inside: avoid; margin: 0 0 1rem; position: relative; border-radius: 16px; overflow: hidden; background: var(--bg-2); }
 .galerie__item button { all: unset; display: block; width: 100%; cursor: zoom-in; }
@@ -384,7 +367,6 @@ p:last-child { margin-bottom: 0; }
 .visionneuse__suiv { right: 1rem; top: 50%; transform: translateY(-50%); }
 @keyframes fondu { from { opacity: 0; } to { opacity: 1; } }
 
-/* ---------- Partenaires (logos défilants) ---------- */
 .partenaires-titre { text-align: center; font: 600 .82rem var(--f-sans); letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-bottom: 2.2rem; }
 .logos { overflow: hidden; -webkit-mask: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
 .logos__piste { display: flex; align-items: center; width: max-content; animation: defile 30s linear infinite; }
@@ -395,7 +377,6 @@ p:last-child { margin-bottom: 0; }
 .logos a:hover img { filter: none; opacity: 1; }
 @keyframes defile { to { transform: translateX(-50%); } }
 
-/* ---------- Pied de page ---------- */
 .footer { background: var(--dark); color: #bdb1a3; padding: clamp(4rem, 8vw, 6rem) 0 0; font-size: 1rem; }
 .footer a { color: #e8dfd3; text-decoration: none; }
 .footer a:hover { color: var(--gold-2); }
@@ -420,7 +401,6 @@ p:last-child { margin-bottom: 0; }
 .footer__bas { margin-top: 4rem; border-top: 1px solid rgba(255,255,255,.08); padding: 1.6rem 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; font-size: .92rem; }
 .footer__bas ul { display: flex; flex-wrap: wrap; gap: .4rem 1.5rem; }
 
-/* ---------- Formulaires ---------- */
 .formulaire { display: grid; gap: 1.3rem; }
 .formulaire .ligne { display: grid; grid-template-columns: 1fr 1fr; gap: 1.3rem; }
 @media (max-width: 640px) { .formulaire .ligne { grid-template-columns: 1fr; } }
@@ -447,7 +427,6 @@ fieldset { border: 0; padding: 0; margin: 0; }
 .message-form--ko { background: var(--red-soft); color: var(--red-2); }
 .panneau { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: clamp(1.6rem, 4vw, 3rem); box-shadow: var(--shadow); }
 
-/* ---------- Infos pratiques / tarifs ---------- */
 .tarif { text-align: center; padding: 2.6rem 2rem; border-radius: var(--r); background: var(--red); color: #fff; }
 .tarif .surtitre { color: var(--gold-2); }
 .tarif__prix { font-family: var(--f-serif); font-weight: 700; font-size: 5rem; line-height: 1; margin-bottom: .6rem; }
@@ -477,7 +456,6 @@ fieldset { border: 0; padding: 0; margin: 0; }
 .carte-lieu__invite { padding: 2rem; max-width: 440px; }
 .carte-lieu__invite p { font-size: .95rem; color: rgba(255,255,255,.88); margin-top: 1rem; }
 
-/* ---------- Troupes ---------- */
 .troupe { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
 .troupe + .troupe { margin-top: clamp(4rem, 8vw, 6.5rem); }
 .troupe:nth-of-type(even) > :first-child { order: 2; }
@@ -485,7 +463,6 @@ fieldset { border: 0; padding: 0; margin: 0; }
 .troupe h2 { font-size: clamp(2rem, 3.5vw, 2.6rem); }
 @media (max-width: 860px) { .troupe { grid-template-columns: 1fr; } .troupe:nth-of-type(even) > :first-child { order: 0; } }
 
-/* ---------- Adhésion ---------- */
 .etapes { counter-reset: e; list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
 .etapes li { counter-increment: e; }
 .etapes li::before { content: counter(e); display: grid; place-items: center; width: 52px; height: 52px; margin-bottom: 1.1rem; border-radius: 50%; background: var(--gold-2); color: var(--dark); font: 700 1.4rem var(--f-serif); }
@@ -502,7 +479,6 @@ fieldset { border: 0; padding: 0; margin: 0; }
 .cotisation__prix small { font-size: 1rem; color: var(--muted); font-family: var(--f-sans); font-weight: 500; }
 .cotisation ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .45rem; font-size: 1rem; }
 
-/* ---------- Lexique ---------- */
 .lexique { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin: 0; }
 @media (max-width: 900px) { .lexique { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .lexique { grid-template-columns: 1fr; } }
@@ -510,7 +486,6 @@ fieldset { border: 0; padding: 0; margin: 0; }
 .mot dt { font-family: var(--f-gothic); font-size: 1.9rem; color: var(--red); line-height: 1.1; }
 .mot dd { margin: .5rem 0 0; color: var(--muted); font-size: 1.02rem; }
 
-/* ---------- Textes longs (juridique) ---------- */
 .texte-long h2 { font-size: 1.9rem; margin-top: 2.8rem; }
 .texte-long h3 { font-size: 1.35rem; margin-top: 1.8rem; }
 .texte-long ul { padding-left: 1.3rem; }
@@ -528,12 +503,10 @@ fieldset { border: 0; padding: 0; margin: 0; }
 .page-404 .code { font-family: var(--f-gothic); font-size: clamp(6rem, 20vw, 11rem); color: var(--red); line-height: 1; }
 .page-404 .actions-centre { margin-top: 2rem; }
 
-/* ---------- Bouton haut de page ---------- */
 .haut { position: fixed; right: 1.2rem; bottom: 1.2rem; z-index: 90; width: 52px; height: 52px; border-radius: 50%; border: 0; cursor: pointer; background: var(--ink); color: #fff; box-shadow: var(--shadow-lg); display: grid; place-items: center; opacity: 0; transform: translateY(16px); pointer-events: none; transition: opacity .3s, transform .3s, background .2s; }
 .haut.is-visible { opacity: 1; transform: none; pointer-events: auto; }
 .haut:hover { background: var(--red); }
 
-/* ---------- Apparition douce ---------- */
 .revele { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
 .revele.is-visible { opacity: 1; transform: none; }
 .revele[data-delai="1"] { transition-delay: .08s; }
@@ -560,7 +533,6 @@ fieldset { border: 0; padding: 0; margin: 0; }
   .revele { opacity: 1; transform: none; }
 }
 
-/* Chiffres alignés (Cormorant utilise des chiffres « elzéviriens » par défaut) */
 h1, h2, h3, h4, .compte__nb, .date__jours, .tarif__prix, .horaire span, .cotisation__prix, .barre-verre__date { font-variant-numeric: lining-nums; }
 .compte__nb { font-variant-numeric: lining-nums tabular-nums; }
 
@@ -568,7 +540,6 @@ h1, h2, h3, h4, .compte__nb, .date__jours, .tarif__prix, .horaire span, .cotisat
 h1, h2, h3, .entete p, .page-tete p, .hero__texte { text-wrap: balance; }
 .hero__texte { max-width: 700px; }
 
-/* Héros sur téléphone : plus compact pour voir la date sans défiler */
 @media (max-width: 560px) {
   .hero { min-height: 0; }
   .hero__centre { padding: 3rem 1.25rem 1.6rem; }
@@ -583,7 +554,6 @@ h1, h2, h3, .entete p, .page-tete p, .hero__texte { text-wrap: balance; }
   .compte__nb { font-size: 1.45rem; }
 }
 
-/* Fiches artisans / troupes : photo absente, lien vide caché */
 .media-vide { aspect-ratio: 4 / 3; border-radius: var(--r); border: 2px dashed var(--line); background: var(--bg-2); display: grid; place-content: center; justify-items: center; gap: .6rem; color: var(--muted); }
 .media-vide .icon { width: 56px; height: 56px; color: var(--gold); }
 .troupe a[href=""] { display: none; }
@@ -596,9 +566,6 @@ h1, h2, h3, .entete p, .page-tete p, .hero__texte { text-wrap: balance; }
 }
 .toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
 
-/* ==========================================================================
-   TOUCHES MÉDIÉVALES : tons bruns, parchemin, ornements, créneaux
-   ========================================================================== */
 :root {
   --bg: #faf6ee;
   --bg-2: #f1e7d6;
@@ -617,16 +584,13 @@ h1, h2, h3, .entete p, .page-tete p, .hero__texte { text-wrap: balance; }
 body { background-image: var(--grain); }
 .section--alt { background-color: var(--bg-2); background-image: var(--grain); }
 
-/* Surtitres encadrés de petits losanges */
 .surtitre { color: var(--brun); }
 .surtitre::before, .surtitre::after { content: ""; display: inline-block; width: 6px; height: 6px; background: var(--gold); transform: rotate(45deg); vertical-align: middle; margin: 0 .8em .15em; }
 .entete-ligne .surtitre::before, .troupe .surtitre::before, .duo .surtitre::before, .tarif .surtitre::before { margin-left: 0; }
 .entete-ligne .surtitre::after, .troupe .surtitre::after, .duo .surtitre::after { display: none; }
 
-/* Fleuron sous les titres centrés */
 .entete h2::after { content: ""; display: block; width: 140px; height: 16px; margin: 1.1rem auto 0; background: var(--ornement) center / contain no-repeat; }
 
-/* Cartes : liseré doré discret */
 .carte:hover, .actu:hover { border-color: var(--gold-2); }
 .carte__icone, .info-carte > .icon { background: #f3e6d6; color: var(--brun); }
 .btn--contour { border-color: #d9c5a8; }
@@ -634,12 +598,10 @@ body { background-image: var(--grain); }
 .lien { color: var(--brun); }
 .lien:hover { color: var(--red); }
 
-/* Pied de page brun avec créneaux */
 .footer { position: relative; background-color: var(--dark); background-image: var(--grain); margin-top: 26px; }
 .footer::before { content: ""; position: absolute; left: 0; right: 0; top: -26px; height: 26px; background: var(--dark); -webkit-mask: var(--creneaux); mask: var(--creneaux); }
 .section--sombre { background-color: var(--dark); background-image: var(--grain); }
 
-/* ---------- En-tête des pages internes : photo + voile brun ---------- */
 .page-tete {
   position: relative; isolation: isolate; overflow: hidden; text-align: center; color: #fff;
   min-height: clamp(320px, 40vw, 440px); display: grid; align-items: center;
@@ -657,7 +619,6 @@ body { background-image: var(--grain); }
 .fil-ariane a { color: #fff; }
 .fil-ariane a:hover { color: var(--gold-2); }
 
-/* ---------- Dates de la saison : liste épurée ---------- */
 .dates { list-style: none; margin: 0 auto; padding: 0; max-width: 820px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
 .date { display: grid; grid-template-columns: 150px minmax(0, 1fr) auto; align-items: center; gap: 1.2rem; padding: 1.05rem 1.4rem; }
 .date + .date { border-top: 1px solid var(--line); }
@@ -691,7 +652,6 @@ body { background-image: var(--grain); }
   .date__etat { padding: 0; }
 }
 
-/* ---------- Silhouettes cachées (easter eggs, game-icons.net CC BY 3.0) ---------- */
 .section { position: relative; overflow: hidden; }
 .section > .container, .section > .container--etroit { position: relative; z-index: 1; }
 .cache {
@@ -706,7 +666,6 @@ body { background-image: var(--grain); }
 .cache--dedans { bottom: auto; width: 74px; height: 74px; opacity: .07; transform: rotate(var(--r, 0deg)); }
 .cache--dedans:hover { transform: rotate(0) scale(1.2); opacity: .45; }
 
-
 .cache--pied { bottom: 70px; right: 3%; width: 130px; height: 130px; opacity: .07; transform: rotate(-10deg); }
 .cache--pied:hover { transform: translateY(-30px) rotate(0); opacity: .35; }
 .footer > .container { position: relative; z-index: 1; }
@@ -718,7 +677,6 @@ body { background-image: var(--grain); }
 }
 @media (hover: none) { .cache:active { opacity: .4; } }
 
-/* ---------- L'essentiel : photo + parchemin ---------- */
 .essentiel { display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; }
 .essentiel__photo img { width: 100%; height: clamp(420px, 48vw, 620px); object-fit: cover; border-radius: var(--r); box-shadow: var(--shadow-lg); }
 .parchemin {
@@ -745,14 +703,9 @@ body { background-image: var(--grain); }
   .essentiel__liste > div { grid-template-columns: 1fr; gap: .3rem; }
 }
 
-/* ==========================================================================
-   HARMONISATION (audit) : grille de 8 px, 2 hauteurs de bouton, 3 arrondis,
-   textes ≥ 14 px, contrastes AA, cibles tactiles ≥ 44 px
-   ========================================================================== */
 :root { --muted: #6a594a; }
 button, input, select, textarea { font-family: inherit; }
 
-/* Boutons : 52 px (standard) et 44 px (compact) */
 .btn { min-height: 52px; padding: 0 1.5rem; font-size: 1rem; }
 .btn--petit, .date__agenda, .filtre { min-height: 44px; padding: 0 1rem; }
 .btn--petit { font-size: .95rem; }
@@ -760,25 +713,20 @@ button, input, select, textarea { font-family: inherit; }
 .taille { width: 44px; height: 44px; font-size: 1rem; }
 .burger { width: 44px; height: 44px; }
 
-/* Liens texte : zone cliquable de 44 px */
 .lien { min-height: 44px; }
 
-/* Textes jamais sous 14 px */
 .surtitre, .partenaires-titre, .footer__titre, .barre-verre__label, .cotisation h3 { font-size: .875rem; letter-spacing: .16em; }
 .etiquette { font-size: .875rem; padding: .25rem .75rem; }
 .compte__lib { font-size: .8125rem; letter-spacing: .06em; }
 .logo__petit { font-size: .75rem; }
 @media (max-width: 560px) { .logo__petit { font-size: .6875rem; } }
 
-/* Titres de pied de page (h2 sémantique, style discret) */
 .footer__titre { font-family: var(--f-sans); font-weight: 600; text-transform: uppercase; color: var(--gold-2); margin: 0 0 1.5rem; line-height: 1.3; }
 
-/* Titres : jamais plus de 2 lignes sur mobile */
 h2 { font-size: clamp(1.875rem, 4.2vw, 3.2rem); }
 .page-tete h1 { font-size: clamp(2.5rem, 7vw, 5rem); }
 .hero h1 { font-size: clamp(3rem, 10vw, 7.6rem); }
 
-/* Espacements sur la grille de 8 px */
 .entete { margin-bottom: 3rem; }
 .entete-ligne { margin-bottom: 3rem; }
 .actions-centre { margin-top: 2rem; }
@@ -788,12 +736,10 @@ h2 { font-size: clamp(1.875rem, 4.2vw, 3.2rem); }
 .duo .actions { margin-top: 2rem; }
 .mt-2 { margin-top: 2rem; } .mt-3 { margin-top: 3rem; }
 
-/* Fiches sans photo : illustration volontaire (pas de « photo à venir ») */
 .media-vide { border: 0; background: #efe2cc var(--grain); }
 .media-vide .icon, .media-vide img { width: 45%; height: auto; max-width: 180px; opacity: .55; }
 .media-vide span { display: none; }
 
-/* Menu : « Les Féodales » est un vrai lien + bouton flèche séparé */
 .sous-menu__tete { display: flex; align-items: center; }
 .sous-menu__tete > a { padding-right: .35rem; }
 .nav__fleche { width: 44px; height: 44px; display: grid; place-items: center; border: 0; background: none; border-radius: 999px; cursor: pointer; color: var(--ink); }
@@ -814,17 +760,10 @@ h2 { font-size: clamp(1.875rem, 4.2vw, 3.2rem); }
   .logo__petit { font-size: .75rem; }
 }
 
-/* ==========================================================================
-   V3 : créneaux raccord, dates en feuilles de calendrier, récit, serment,
-   tuiles de rôles, sceau de cire
-   ========================================================================== */
-
-/* Créneaux : même couleur ET même grain que la section voisine */
 .page-tete::after { background: var(--bg) var(--grain); }
 .page-tete:has(+ .section--alt)::after { background-color: var(--bg-2); }
 .footer::before { background: var(--dark) var(--grain); }
 
-/* ---------- Dates : feuilles de calendrier ---------- */
 .dates {
   list-style: none; margin: 0 auto; padding: 0; max-width: 1040px;
   display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;
@@ -867,7 +806,6 @@ h2 { font-size: clamp(1.875rem, 4.2vw, 3.2rem); }
   .date__actions { margin: auto 0 0; }
 }
 
-/* ---------- Récit « Votre journée aux Féodales » ---------- */
 .recit { position: relative; max-width: 1120px; margin: 0 auto; }
 .recit::before {
   content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; transform: translateX(-50%);
@@ -900,7 +838,6 @@ h2 { font-size: clamp(1.875rem, 4.2vw, 3.2rem); }
   .chapitre + .chapitre { margin-top: 3.5rem; }
 }
 
-/* ---------- Sceau de cire décoratif ---------- */
 .texte-scelle { position: relative; }
 .sceau-cire {
   position: absolute; top: -1.5rem; right: 0; width: 104px; height: 104px; display: grid; place-items: center; pointer-events: none;
@@ -912,10 +849,8 @@ h2 { font-size: clamp(1.875rem, 4.2vw, 3.2rem); }
 .sceau-cire img { height: 58%; width: auto; opacity: .9; }
 @media (max-width: 900px) { .sceau-cire { width: 76px; height: 76px; top: -.5rem; } }
 
-/* ---------- Partenaires : respiration sous le titre ---------- */
 .partenaires-titre { margin-bottom: 3rem; }
 
-/* ---------- Le serment (valeurs) ---------- */
 .serment { display: grid; grid-template-columns: 1fr 1fr; column-gap: 4rem; max-width: 1040px; margin: 0 auto; }
 .voeu { display: grid; grid-template-columns: 4.5rem 1fr; gap: 1.25rem; padding: 2rem 0; border-top: 1px solid rgba(224,189,115,.25); }
 .voeu:nth-last-child(-n+2) { border-bottom: 1px solid rgba(224,189,115,.25); }
@@ -925,7 +860,6 @@ h2 { font-size: clamp(1.875rem, 4.2vw, 3.2rem); }
 .serment__citation { text-align: center; max-width: 640px; margin: 3rem auto 0; font-family: var(--f-serif); font-style: italic; font-size: 1.5rem; color: var(--gold-2); }
 @media (max-width: 760px) { .serment { grid-template-columns: 1fr; } .voeu:nth-last-child(2) { border-bottom: 0; } }
 
-/* ---------- Rôles (nous rejoindre) : tuiles photo ---------- */
 .roles { display: grid; grid-template-columns: repeat(6, 1fr); grid-auto-rows: 300px; gap: 1rem; }
 .roles .tuile { grid-column: span 2; grid-row: auto; }
 .roles .tuile:nth-child(4), .roles .tuile:nth-child(5) { grid-column: span 3; }
@@ -934,7 +868,6 @@ h2 { font-size: clamp(1.875rem, 4.2vw, 3.2rem); }
 @media (max-width: 900px) { .roles { grid-template-columns: 1fr 1fr; grid-auto-rows: 240px; } .roles .tuile, .roles .tuile:nth-child(4) { grid-column: span 1; } .roles .tuile:nth-child(5) { grid-column: span 2; } }
 @media (max-width: 560px) { .roles { grid-template-columns: 1fr; } .roles .tuile, .roles .tuile:nth-child(5) { grid-column: auto; } }
 
-/* Encadré chantiers */
 .encart { display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: center; padding: 2rem; border-radius: var(--r); background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--gold); }
 .encart img { width: 72px; height: 72px; }
 .encart h3 { font-size: 1.5rem; margin-bottom: .4rem; }
@@ -946,13 +879,10 @@ h2 { font-size: clamp(1.875rem, 4.2vw, 3.2rem); }
 @media (max-width: 900px) { .texte-scelle .sceau-cire { bottom: -.25rem; right: 0; } }
 @media (max-width: 680px) { .date__jours { gap: .4rem; padding: 1.25rem .5rem .75rem; } .date__jour small { font-size: .8125rem; } .date__et { font-size: 1.25rem; } }
 
-/* ---------- V4 ---------- */
-/* Filigrane discret (même famille que les silhouettes cachées) */
 .texte-scelle > *:not(.filigrane) { position: relative; z-index: 1; }
 .filigrane { position: absolute; right: -1rem; bottom: -2rem; width: 170px; height: 170px; opacity: .07; transform: rotate(-10deg); background: center / contain no-repeat; pointer-events: none; z-index: 0; }
 @media (max-width: 900px) { .filigrane { width: 120px; height: 120px; right: 0; } }
 
-/* FAQ : « + » dessiné, parfaitement centré */
 .faq summary::after {
   content: ""; font-size: 0;
   background:
@@ -967,7 +897,6 @@ h2 { font-size: clamp(1.875rem, 4.2vw, 3.2rem); }
     var(--red);
 }
 
-/* Dates : bouton Réserver + respiration avant les infos pratiques */
 .date__billet {
   display: inline-flex; align-items: center; gap: .4rem; min-height: 44px; padding: 0 1rem; border-radius: 999px;
   font-weight: 600; font-size: .95rem; text-decoration: none; color: #fff; background: var(--brun); transition: background .2s;
@@ -979,7 +908,6 @@ h2 { font-size: clamp(1.875rem, 4.2vw, 3.2rem); }
 .dates + .infos-bande { margin-top: 4rem; }
 @media (max-width: 680px) { .date__billet { padding: 0 .8rem; font-size: .9rem; } .date__actions { gap: .35rem; } }
 
-/* Troupes : fiches en grille */
 .troupes-grille { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 1040px; margin: 0 auto; }
 .fiche-troupe { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
 .fiche-troupe > img, .fiche-troupe > .media-vide { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 0; }
@@ -991,7 +919,6 @@ h2 { font-size: clamp(1.875rem, 4.2vw, 3.2rem); }
 .fiche-troupe .surtitre::before { margin-left: 0; }
 @media (max-width: 760px) { .troupes-grille { grid-template-columns: 1fr; } }
 
-/* ---------- V5 ---------- */
 .filigrane { top: -2.5rem; bottom: auto; right: -1.5rem; }
 @media (max-width: 900px) { .filigrane { top: -1rem; right: 0; } }
 .partenaires-titre { margin: 0 0 4rem; }
@@ -1004,8 +931,6 @@ h2 { font-size: clamp(1.875rem, 4.2vw, 3.2rem); }
 .dates ~ .actions-centre { margin-top: 3rem; }
 .section--serree .partenaires-titre { margin-bottom: 3.5rem; }
 
-/* ---------- V6 ---------- */
-/* Heaume en filigrane : à droite du bloc, interactif comme les autres silhouettes */
 .filigrane {
   top: -.5rem; right: -7rem; bottom: auto; width: 150px; height: 150px; z-index: 2;
   pointer-events: auto; cursor: default; transition: transform .6s cubic-bezier(.2,.8,.2,1), opacity .6s;
@@ -1014,7 +939,6 @@ h2 { font-size: clamp(1.875rem, 4.2vw, 3.2rem); }
 @media (max-width: 1360px) { .filigrane { right: -2rem; } }
 @media (max-width: 900px) { .filigrane { top: -1rem; right: 0; width: 100px; height: 100px; } }
 
-/* Dates : cartes plus grandes et plus aérées */
 .dates { max-width: 1200px; gap: 1.5rem; }
 .date { flex: 1 1 200px; max-width: 224px; }
 .date__mois { font-size: 2rem; padding: .9rem .5rem .8rem; }
@@ -1037,7 +961,6 @@ h2 { font-size: clamp(1.875rem, 4.2vw, 3.2rem); }
   .date__partager { width: 44px; height: 44px; }
 }
 
-/* ---------- V7 : bouton Aa+ fixe en bas à gauche (face au bouton « haut ») ---------- */
 .taille {
   position: fixed; left: 1.2rem; bottom: 1.2rem; z-index: 90;
   width: 52px; height: 52px; border-radius: 50%; border: 1.5px solid var(--line);
