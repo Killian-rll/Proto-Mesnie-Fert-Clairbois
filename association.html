@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.google.com; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>L'association — Les Féodales de Clairbois</title>
   <meta name="description" content="La Mesnie de la Ferté-Clairbois, association de reconstitution médiévale (Xe – XIIIe siècle) au Domaine de la Ferté-Clairbois à Sainte-Suzanne-et-Chammes&nbsp;: histoire, valeurs, domaine et partenaires.">
   <!--robots-->
@@ -265,7 +267,8 @@
           </ul>
           <form data-formulaire data-email="lamesniedelaferteclairbois@gmail.com" data-sujet="Inscription à la lettre d'information" action="" novalidate>
             <label class="sr-only" for="nl-email">Votre adresse e-mail pour recevoir nos nouvelles</label>
-            <input id="nl-email" type="email" name="email" placeholder="Votre e-mail" required autocomplete="email">
+            <input id="nl-email" type="email" name="email" placeholder="Votre e-mail" required autocomplete="email" maxlength="254">
+            <input class="piege" type="text" name="site_web" tabindex="-1" autocomplete="off" aria-hidden="true">
             <button class="btn btn--rouge" type="submit">S'inscrire</button>
             <p class="message-form" role="status" hidden></p>
           </form>
