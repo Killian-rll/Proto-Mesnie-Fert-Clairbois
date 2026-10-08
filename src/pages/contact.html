@@ -17,9 +17,10 @@ image: assets/img/domaine-donjon.jpg
   <div class="container duo" style="align-items:start">
     <h2 class="sr-only">Formulaire de contact</h2>
     <form class="formulaire panneau revele" data-formulaire data-email="{{site.email}}" data-sujet="Message depuis le site" action="" novalidate>
+      <input class="piege" type="text" name="site_web" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="ligne">
-        <div class="champ"><label for="c-nom">Nom et prénom *</label><input id="c-nom" type="text" name="nom" required autocomplete="name"><span class="champ__erreur" aria-live="polite"></span></div>
-        <div class="champ"><label for="c-email">E-mail *</label><input id="c-email" type="email" name="email" required autocomplete="email"><span class="champ__erreur" aria-live="polite"></span></div>
+        <div class="champ"><label for="c-nom">Nom et prénom *</label><input id="c-nom" type="text" name="nom" required autocomplete="name" maxlength="120"><span class="champ__erreur" aria-live="polite"></span></div>
+        <div class="champ"><label for="c-email">E-mail *</label><input id="c-email" type="email" name="email" required autocomplete="email" maxlength="254"><span class="champ__erreur" aria-live="polite"></span></div>
       </div>
       <div class="champ">
         <label for="c-sujet">Sujet *</label>
@@ -36,7 +37,7 @@ image: assets/img/domaine-donjon.jpg
         </select>
         <span class="champ__erreur" aria-live="polite"></span>
       </div>
-      <div class="champ"><label for="c-message">Message *</label><textarea id="c-message" name="message" required></textarea><span class="champ__erreur" aria-live="polite"></span></div>
+      <div class="champ"><label for="c-message">Message *</label><textarea id="c-message" name="message" required maxlength="5000"></textarea><span class="champ__erreur" aria-live="polite"></span></div>
       <label class="case"><input type="checkbox" name="consentement"> <span>J'accepte que mes données soient utilisées pour répondre à ma demande. <a href="confidentialite.html">En savoir plus</a></span></label>
       <p class="message-form" role="status" hidden></p>
       <div><button class="btn btn--rouge" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> Envoyer</button></div>

@@ -82,13 +82,14 @@ image: assets/img/mesnie-groupe.jpg
       <p>Sans engagement&nbsp;: un membre du bureau vous recontacte rapidement.</p>
     </div>
     <form class="formulaire panneau" data-formulaire data-email="{{site.email}}" data-sujet="Pré-inscription à la Mesnie" data-merci="Merci ! Nous vous recontactons très vite." action="" novalidate>
+      <input class="piege" type="text" name="site_web" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="ligne">
-        <div class="champ"><label for="r-prenom">Prénom *</label><input id="r-prenom" type="text" name="prenom" required autocomplete="given-name"><span class="champ__erreur" aria-live="polite"></span></div>
-        <div class="champ"><label for="r-nom">Nom *</label><input id="r-nom" type="text" name="nom" required autocomplete="family-name"><span class="champ__erreur" aria-live="polite"></span></div>
+        <div class="champ"><label for="r-prenom">Prénom *</label><input id="r-prenom" type="text" name="prenom" required autocomplete="given-name" maxlength="120"><span class="champ__erreur" aria-live="polite"></span></div>
+        <div class="champ"><label for="r-nom">Nom *</label><input id="r-nom" type="text" name="nom" required autocomplete="family-name" maxlength="120"><span class="champ__erreur" aria-live="polite"></span></div>
       </div>
       <div class="ligne">
-        <div class="champ"><label for="r-email">E-mail *</label><input id="r-email" type="email" name="email" required autocomplete="email"><span class="champ__erreur" aria-live="polite"></span></div>
-        <div class="champ"><label for="r-tel">Téléphone</label><input id="r-tel" type="tel" name="telephone" autocomplete="tel"></div>
+        <div class="champ"><label for="r-email">E-mail *</label><input id="r-email" type="email" name="email" required autocomplete="email" maxlength="254"><span class="champ__erreur" aria-live="polite"></span></div>
+        <div class="champ"><label for="r-tel">Téléphone</label><input id="r-tel" type="tel" name="telephone" autocomplete="tel" maxlength="20"></div>
       </div>
       <fieldset class="champ">
         <legend>Ce qui vous intéresse</legend>
@@ -104,7 +105,7 @@ image: assets/img/mesnie-groupe.jpg
       </fieldset>
       <div class="champ">
         <label for="r-message">Quelques mots sur vous</label>
-        <textarea id="r-message" name="message" placeholder="Vos envies, vos questions…"></textarea>
+        <textarea id="r-message" name="message" placeholder="Vos envies, vos questions…" maxlength="5000"></textarea>
       </div>
       <label class="case"><input type="checkbox" name="consentement"> <span>J'accepte que mes données soient utilisées pour être recontacté(e) par l'association. <a href="confidentialite.html">En savoir plus</a></span></label>
       <p class="message-form" role="status" hidden></p>
