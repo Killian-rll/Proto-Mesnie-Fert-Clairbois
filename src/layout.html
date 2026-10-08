@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{titre}}</title>
+  <meta name="description" content="{{description}}">
+  <!--robots-->
+  <meta name="theme-color" content="#fbf8f3">
+  <link rel="canonical" href="{{site.url}}/{{page}}">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Les Féodales de Clairbois">
+  <meta property="og:title" content="{{titre}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:image" content="{{site.url}}/{{image}}">
+  <link rel="icon" type="image/png" href="assets/img/embleme.png">
+  <link rel="apple-touch-icon" href="assets/img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Grenze+Gotisch:wght@500&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NGO",
+    "name": "La Mesnie de la Ferté-Clairbois",
+    "description": "Association de reconstitution médiévale, organisatrice des Féodales de Clairbois à Sainte-Suzanne-et-Chammes (Mayenne).",
+    "url": "{{site.url}}",
+    "logo": "{{site.url}}/assets/img/logo.png",
+    "email": "{{site.email}}",
+    "address": { "@type": "PostalAddress", "addressLocality": "Sainte-Suzanne-et-Chammes", "postalCode": "53270", "addressRegion": "Mayenne", "addressCountry": "FR" },
+    "sameAs": ["{{site.facebook}}", "{{site.helloasso}}"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  {{> icones}}
+
+  <header class="header">
+    <div class="container">
+      <a class="logo" href="index.html" aria-label="La Mesnie de la Ferté-Clairbois — accueil">
+        <img src="assets/img/embleme.png" alt="" width="29" height="56">
+        <span class="logo__texte">
+          <span class="logo__petit">La Mesnie de la</span>
+          <span class="logo__grand">Ferté-Clairbois</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="navigation" aria-label="Menu principal">
+        <ul>
+          <li class="nav__accueil"><a href="index.html" data-nav="accueil">Accueil</a></li>
+          <li class="sous-menu">
+            <div class="sous-menu__tete">
+              <a href="feodales.html" class="sous-menu__lien" data-nav="feodales-menu">Les Féodales</a>
+              <button class="nav__fleche" type="button" aria-expanded="false" aria-controls="sm-feodales" aria-label="Afficher les pages des Féodales"><svg class="icon" aria-hidden="true"><use href="#i-bas"/></svg></button>
+            </div>
+            <div class="sous-menu__panneau" id="sm-feodales">
+              <ul>
+                <li><a href="feodales.html" data-nav="feodales"><svg class="icon" aria-hidden="true"><use href="#i-agenda"/></svg><strong>Les Féodales</strong><small>C'est quoi, dates, tarif, accès</small></a></li>
+                <li><a href="artisans.html" data-nav="artisans"><svg class="icon" aria-hidden="true"><use href="#i-marteau"/></svg><strong>Nos artisans</strong><small>Le marché et les métiers d'antan</small></a></li>
+                <li><a href="troupes.html" data-nav="troupes"><svg class="icon" aria-hidden="true"><use href="#i-epee"/></svg><strong>Nos troupes</strong><small>Combats, cavaliers et compagnies</small></a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="actualites.html" data-nav="actualites">Actualités</a></li>
+          <li><a href="galerie.html" data-nav="galerie">Galerie</a></li>
+          <li><a href="association.html" data-nav="association">L'association</a></li>
+          <li><a href="contact.html" data-nav="contact">Contact</a></li>
+          <li class="nav__cta-mobile"><a href="nous-rejoindre.html">Nous rejoindre</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__outils">
+        <a class="btn btn--rouge btn--petit header__cta" href="nous-rejoindre.html" data-nav="rejoindre">Nous rejoindre</a>
+        <button class="burger" type="button" aria-expanded="false" aria-controls="navigation" aria-label="Ouvrir le menu">
+          <span class="burger__barres" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu">
+{{contenu}}
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grille">
+        <div>
+          <div class="footer__marque">
+            <img src="assets/img/embleme-clair.png" alt="" width="35" height="68" loading="lazy">
+            <span>La Mesnie de la<br>Ferté-Clairbois</span>
+          </div>
+          <p>Association loi 1901 de reconstitution médiévale, organisatrice des Féodales de Clairbois à Sainte-Suzanne-et-Chammes, en Mayenne.</p>
+          <div class="footer__reseaux">
+            <a href="{{site.facebook}}" target="_blank" rel="noopener" aria-label="Facebook (nouvelle fenêtre)"><svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg></a>
+            <a href="{{site.helloasso}}" target="_blank" rel="noopener" aria-label="HelloAsso&nbsp;: billetterie et adhésion (nouvelle fenêtre)"><svg class="icon" aria-hidden="true"><use href="#i-coeur"/></svg></a>
+            <a href="mailto:{{site.email}}" aria-label="Nous écrire par e-mail"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h2 class="footer__titre">Les Féodales</h2>
+          <ul>
+            <li><a href="feodales.html">Les Féodales de Clairbois</a></li>
+            <li><a href="artisans.html">Nos artisans</a></li>
+            <li><a href="troupes.html">Nos troupes</a></li>
+            <li><a href="galerie.html">Galerie photos</a></li>
+            <li><a href="{{site.helloasso}}" target="_blank" rel="noopener">Billetterie</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer__titre">L'association</h2>
+          <ul>
+            <li><a href="association.html">Qui sommes-nous&nbsp;?</a></li>
+            <li><a href="actualites.html">Actualités</a></li>
+            <li><a href="nous-rejoindre.html">Nous rejoindre</a></li>
+            <li><a href="association.html#partenaires">Partenaires</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer__titre">Restons en lien</h2>
+          <ul class="footer__contact">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span>Domaine de la Ferté-Clairbois<br>{{site.adresse}}</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:{{site.email}}">{{site.email}}</a></li>
+          </ul>
+          <form data-formulaire data-email="{{site.email}}" data-sujet="Inscription à la lettre d'information" action="" novalidate>
+            <label class="sr-only" for="nl-email">Votre adresse e-mail pour recevoir nos nouvelles</label>
+            <input id="nl-email" type="email" name="email" placeholder="Votre e-mail" required autocomplete="email">
+            <button class="btn btn--rouge" type="submit">S'inscrire</button>
+            <p class="message-form" role="status" hidden></p>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bas">
+        <p>© <span data-annee>2026</span> La Mesnie de la Ferté-Clairbois</p>
+        <ul>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="confidentialite.html">Confidentialité</a></li>
+          <li><a href="cgv.html">Conditions de billetterie</a></li>
+          <li><a href="accessibilite.html">Accessibilité</a></li>
+          <li><a href="plan-du-site.html">Plan du site</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <button class="taille" type="button" data-taille-btn>Aa+</button>
+
+  <button class="haut" type="button" aria-label="Revenir en haut de la page">
+    <svg class="icon" aria-hidden="true"><use href="#i-haut"/></svg>
+  </button>
+
+  <div class="visionneuse" role="dialog" aria-modal="true" aria-label="Visionneuse de photos">
+    <button type="button" class="visionneuse__fermer" aria-label="Fermer">✕</button>
+    <button type="button" class="visionneuse__prec" aria-label="Photo précédente">‹</button>
+    <figure><img src="data:," alt=""><figcaption></figcaption></figure>
+    <button type="button" class="visionneuse__suiv" aria-label="Photo suivante">›</button>
+  </div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

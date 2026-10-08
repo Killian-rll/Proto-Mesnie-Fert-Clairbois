@@ -1,0 +1,9 @@
+dist/
+assets/img/_sources/
+.claude/
+node_modules/
+apercu.html
+audit.html
+planche.html
+A-COMPLETER.md
+AUDIT.md

@@ -1,0 +1,79 @@
+---
+titre: Actualités
+description: Les nouvelles de La Mesnie de la Ferté-Clairbois&nbsp;: Féodales de Clairbois, événements au domaine, vie de l'association.
+nav: actualites
+image: assets/img/domaine-donjon.jpg
+---
+<section class="page-tete">
+  <img class="page-tete__fond" src="assets/img/domaine-donjon.jpg" alt="" width="1920" height="1280" fetchpriority="high">
+  <div class="container">
+    <nav class="fil-ariane" aria-label="Fil d'Ariane"><ol><li><a href="index.html">Accueil</a></li><li aria-current="page">Actualités</li></ol></nav>
+    <h1>Actualités</h1>
+    <p>Les nouvelles du domaine et de la Mesnie. Pour les annonces du jour, suivez aussi notre page Facebook.</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="liste-titre">
+  <div class="container">
+    <h2 id="liste-titre" class="sr-only">Toutes les actualités</h2>
+    <div class="filtres" data-filtres="#liste-actus" role="group" aria-label="Filtrer les actualités">
+      <button type="button" class="filtre" data-filtre="tout" aria-pressed="true">Tout</button>
+      <button type="button" class="filtre" data-filtre="feodales" aria-pressed="false">Les Féodales</button>
+      <button type="button" class="filtre" data-filtre="evenements" aria-pressed="false">Événements</button>
+      <button type="button" class="filtre" data-filtre="vie" aria-pressed="false">Vie de l'association</button>
+    </div>
+
+    <div class="cartes" id="liste-actus">
+      <article class="actu actu--une actu--affiche revele" id="donjon-hante" data-cat="evenements">
+        <div class="actu__image"><img src="assets/img/donjon-hante.webp" alt="Affiche du Donjon Hanté de Clairbois, samedi 31 octobre 2026 à partir de 17h30, tarif 6 euros à partir de 10 ans" width="465" height="659"></div>
+        <div class="actu__corps">
+          <div class="actu__meta"><span class="etiquette etiquette--rouge">À la une</span><span>Samedi 31 octobre 2026</span></div>
+          <h3>Le Donjon Hanté de Clairbois</h3>
+          <p>Pour Halloween, le Centre médiéval de Clairbois se pare de brume et de toiles d'araignée. Suivez le parcours «&nbsp;Frissons&nbsp;» à la recherche des âmes oubliées&nbsp;: une aventure pour petits et grands, au pied du donjon.</p>
+          <ul class="pratique">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-horloge"/></svg>À partir de 17h30</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-ticket"/></svg>6&nbsp;€ dès 10 ans</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-etoile"/></svg>Costumes bienvenus</li>
+          </ul>
+          <a class="btn btn--rouge" href="{{site.helloasso}}" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-ticket"/></svg> Réserver sur HelloAsso</a>
+        </div>
+      </article>
+
+      <article class="actu revele" id="saison-2027" data-cat="feodales">
+        <div class="actu__image"><img src="assets/img/feodales-troupe.webp" alt="La troupe en costume devant la tour en bois du domaine" width="1600" height="900" loading="lazy"></div>
+        <div class="actu__corps">
+          <div class="actu__meta"><span class="etiquette">Les Féodales</span><span>Octobre 2026</span></div>
+          <h3>Rendez-vous en avril 2027</h3>
+          <p>Les Féodales reviennent au printemps, le 2<sup>e</sup> week-end de chaque mois d'avril à août. Ajoutez la première date à votre agenda en un clic.</p>
+          <a class="lien" href="feodales.html">Voir le calendrier <svg class="icon" aria-hidden="true"><use href="#i-fleche"/></svg></a>
+        </div>
+      </article>
+
+      <article class="actu revele" data-delai="1" id="merci-2026" data-cat="feodales">
+        <div class="actu__image"><img src="assets/img/mini/feodales-campement.jpg" alt="Étal d'armes et de casques devant les tentes du campement" width="760" height="507" loading="lazy"></div>
+        <div class="actu__corps">
+          <div class="actu__meta"><span class="etiquette">Les Féodales</span><span>Août 2026</span></div>
+          <h3>Merci pour la saison 2026&nbsp;!</h3>
+          <p>Cinq week-ends de fête d'avril à août&nbsp;: merci aux visiteurs, aux troupes, aux artisans et à tous les bénévoles. À l'année prochaine&nbsp;!</p>
+          <a class="lien" href="galerie.html">Voir la galerie <svg class="icon" aria-hidden="true"><use href="#i-fleche"/></svg></a>
+        </div>
+      </article>
+
+      <article class="actu revele" data-delai="2" data-cat="vie">
+        <div class="actu__image"><img src="assets/img/mini/mesnie-groupe.jpg" alt="Les membres de la Mesnie réunis dans la cour du domaine" width="760" height="458" loading="lazy"></div>
+        <div class="actu__corps">
+          <div class="actu__meta"><span class="etiquette">Vie de l'association</span><span>Septembre 2026</span></div>
+          <h3>La Mesnie recrute pour 2027</h3>
+          <p>Combattants, artisans, cuisiniers, couturières ou bénévoles d'un jour&nbsp;: il y a une place pour vous dans la mesnie.</p>
+          <a class="lien" href="nous-rejoindre.html">Nous rejoindre <svg class="icon" aria-hidden="true"><use href="#i-fleche"/></svg></a>
+        </div>
+      </article>
+    </div>
+
+    <div class="panneau mt-3 centre revele">
+      <h2 style="font-size:2rem">Toutes les nouvelles au jour le jour</h2>
+      <p class="note">Photos, annonces de dernière minute, coulisses&nbsp;: notre page Facebook est mise à jour très régulièrement.</p>
+      <div class="actions-centre" style="margin-top:1.5rem"><a class="btn btn--rouge" href="{{site.facebook}}" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg> Suivre la page Facebook</a></div>
+    </div>
+  </div>
+</section>

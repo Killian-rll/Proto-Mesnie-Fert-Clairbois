@@ -1,0 +1,60 @@
+---
+titre: Contact
+description: Contactez La Mesnie de la Ferté-Clairbois&nbsp;: Féodales de Clairbois, groupes, exposants, troupes, partenariats.
+nav: contact
+image: assets/img/domaine-donjon.jpg
+---
+<section class="page-tete">
+  <img class="page-tete__fond" src="assets/img/domaine-donjon.jpg" alt="" width="1920" height="1280" fetchpriority="high">
+  <div class="container">
+    <nav class="fil-ariane" aria-label="Fil d'Ariane"><ol><li><a href="index.html">Accueil</a></li><li aria-current="page">Contact</li></ol></nav>
+    <h1>Nous écrire</h1>
+    <p>Une question sur les Féodales, une visite de groupe, un partenariat&nbsp;? Nous vous répondons rapidement.</p>
+  </div>
+</section>
+
+<section class="section" aria-label="Formulaire et coordonnées">
+  <div class="container duo" style="align-items:start">
+    <h2 class="sr-only">Formulaire de contact</h2>
+    <form class="formulaire panneau revele" data-formulaire data-email="{{site.email}}" data-sujet="Message depuis le site" action="" novalidate>
+      <div class="ligne">
+        <div class="champ"><label for="c-nom">Nom et prénom *</label><input id="c-nom" type="text" name="nom" required autocomplete="name"><span class="champ__erreur" aria-live="polite"></span></div>
+        <div class="champ"><label for="c-email">E-mail *</label><input id="c-email" type="email" name="email" required autocomplete="email"><span class="champ__erreur" aria-live="polite"></span></div>
+      </div>
+      <div class="champ">
+        <label for="c-sujet">Sujet *</label>
+        <select id="c-sujet" name="sujet" required>
+          <option value="">Choisissez un sujet</option>
+          <option value="feodales">Les Féodales de Clairbois</option>
+          <option value="groupe">Visite de groupe ou scolaire</option>
+          <option value="adhesion">Adhésion à l'association</option>
+          <option value="exposant">Je suis artisan et souhaite exposer</option>
+          <option value="troupe">Je présente ma troupe</option>
+          <option value="partenariat">Partenariat ou mécénat</option>
+          <option value="photos">Partager mes photos</option>
+          <option value="autre">Autre</option>
+        </select>
+        <span class="champ__erreur" aria-live="polite"></span>
+      </div>
+      <div class="champ"><label for="c-message">Message *</label><textarea id="c-message" name="message" required></textarea><span class="champ__erreur" aria-live="polite"></span></div>
+      <label class="case"><input type="checkbox" name="consentement"> <span>J'accepte que mes données soient utilisées pour répondre à ma demande. <a href="confidentialite.html">En savoir plus</a></span></label>
+      <p class="message-form" role="status" hidden></p>
+      <div><button class="btn btn--rouge" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> Envoyer</button></div>
+    </form>
+
+    <div class="revele" data-delai="1">
+      <h2 class="sr-only">Nos coordonnées</h2>
+      <div class="horaires">
+        <div class="info-carte"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><div><h3>Adresse</h3><p>Domaine de la Ferté-Clairbois<br>{{site.adresse}}</p></div></div>
+        <div class="info-carte"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><div><h3>E-mail</h3><p><a href="mailto:{{site.email}}">{{site.email}}</a></p></div></div>
+        <div class="info-carte"><svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg><div><h3>Facebook</h3><p>Le plus rapide&nbsp;: <a href="{{site.facebook}}" target="_blank" rel="noopener">écrivez-nous en message privé</a>.</p></div></div>
+      </div>
+      <div class="carte-lieu mt-2" data-carte="Domaine de la Ferté-Clairbois, Sainte-Suzanne-et-Chammes" style="min-height:300px">
+        <div class="carte-lieu__invite">
+          <button type="button" class="btn btn--clair"><svg class="icon" aria-hidden="true"><use href="#i-carte"/></svg> Afficher la carte</button>
+          <p>Carte fournie par Google Maps, qui peut déposer des cookies.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

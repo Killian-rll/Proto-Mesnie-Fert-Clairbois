@@ -1,0 +1,10 @@
+{
+  "name": "mesnie-ferte-clairbois",
+  "private": true,
+  "description": "Site web de La Mesnie de la Ferté-Clairbois",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node build.mjs --serve"
+  }
+}

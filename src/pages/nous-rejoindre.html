@@ -1,0 +1,131 @@
+---
+titre: Nous rejoindre
+description: Devenez membre de La Mesnie de la Ferté-Clairbois&nbsp;: combattant, artisan, cuisinier, couturière ou bénévole. Déroulé et formulaire de pré-inscription.
+nav: rejoindre
+image: assets/img/mesnie-groupe.jpg
+---
+<section class="page-tete">
+  <img class="page-tete__fond" src="assets/img/feodales-troupe.webp" alt="" width="1600" height="900" fetchpriority="high">
+  <div class="container">
+    <nav class="fil-ariane" aria-label="Fil d'Ariane"><ol><li><a href="index.html">Accueil</a></li><li aria-current="page">Nous rejoindre</li></ol></nav>
+    <h1>Rejoignez la Mesnie</h1>
+    <p>Pas besoin d'être historien ni d'avoir un costume&nbsp;: il suffit d'avoir envie d'apprendre et de partager.</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="profils-titre">
+  <div class="container">
+    <div class="entete revele">
+      <span class="surtitre">Trouvez votre place</span>
+      <h2 id="profils-titre">Qui peut nous rejoindre&nbsp;?</h2>
+      <p>Tout le monde, seul, en couple ou en famille.</p>
+    </div>
+    <div class="roles">
+      <a class="tuile revele" href="#formulaire">
+        <img src="assets/img/feodales-troupe.webp" alt="" width="1600" height="900" loading="lazy">
+        <h3>Combattant</h3>
+        <p>Escrime médiévale et démonstrations, avec formation à la sécurité.</p>
+      </a>
+      <a class="tuile revele" data-delai="1" href="#formulaire">
+        <img src="assets/img/mini/domaine-atelier.jpg" alt="" width="760" height="1140" loading="lazy">
+        <h3>Artisan</h3>
+        <p>Apprendre un métier ancien ou partager le vôtre.</p>
+      </a>
+      <a class="tuile revele" data-delai="2" href="#formulaire">
+        <img src="assets/img/mini/feodales-campement.jpg" alt="" width="760" height="507" loading="lazy">
+        <h3>Campement</h3>
+        <p>Cuisine, couture et accueil du public pendant les fêtes.</p>
+      </a>
+      <a class="tuile revele" href="#formulaire">
+        <img src="assets/img/mini/mesnie-groupe.jpg" alt="" width="760" height="458" loading="lazy">
+        <h3>Bénévole</h3>
+        <p>Accueil, billetterie, montage&nbsp;: un coup de main pendant les Féodales, repas offert.</p>
+      </a>
+      <a class="tuile tuile--chantier revele" data-delai="1" href="#chantiers">
+        <img src="assets/img/domaine-aerien.jpg" alt="" width="1920" height="1443" loading="lazy">
+        <span class="tuile__badge">Sans costume</span>
+        <h3>Chantiers</h3>
+        <p>Des week-ends de travaux pour remettre en ordre le domaine et l'améliorer.</p>
+      </a>
+    </div>
+
+    <div class="encart mt-3 revele" id="chantiers">
+      <img src="assets/img/deco/tour.svg" alt="" width="72" height="72">
+      <div>
+        <h3>Les week-ends chantier</h3>
+        <p>Pas besoin d'aimer les costumes pour nous aider&nbsp;! Plusieurs week-ends dans l'année, les bénévoles se retrouvent pour entretenir, remettre en ordre et améliorer le domaine. Tout le matériel est sur place&nbsp;: bricoleurs, jardiniers ou simples paires de bras, venez comme vous êtes&nbsp;!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--sombre" aria-labelledby="etapes-titre">
+  <div class="container">
+    <div class="entete revele">
+      <span class="surtitre">Comment ça se passe&nbsp;?</span>
+      <h2 id="etapes-titre">En quatre étapes</h2>
+    </div>
+    <ol class="etapes">
+      <li class="revele"><strong>Prenez contact</strong>Remplissez le formulaire ou venez nous voir aux Féodales.</li>
+      <li class="revele" data-delai="1"><strong>Rencontrons-nous</strong>Une journée de découverte avec nous, sans engagement.</li>
+      <li class="revele" data-delai="2"><strong>Adhérez</strong>La cotisation se règle en ligne sur HelloAsso.</li>
+      <li class="revele" data-delai="3"><strong>Entrez dans l'Histoire</strong>Nous vous aidons à préparer votre costume et votre première fête.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="formulaire" aria-labelledby="form-titre">
+  <div class="container--etroit">
+    <div class="entete revele">
+      <span class="surtitre">Faisons connaissance</span>
+      <h2 id="form-titre">Pré-inscription</h2>
+      <p>Sans engagement&nbsp;: un membre du bureau vous recontacte rapidement.</p>
+    </div>
+    <form class="formulaire panneau" data-formulaire data-email="{{site.email}}" data-sujet="Pré-inscription à la Mesnie" data-merci="Merci ! Nous vous recontactons très vite." action="" novalidate>
+      <div class="ligne">
+        <div class="champ"><label for="r-prenom">Prénom *</label><input id="r-prenom" type="text" name="prenom" required autocomplete="given-name"><span class="champ__erreur" aria-live="polite"></span></div>
+        <div class="champ"><label for="r-nom">Nom *</label><input id="r-nom" type="text" name="nom" required autocomplete="family-name"><span class="champ__erreur" aria-live="polite"></span></div>
+      </div>
+      <div class="ligne">
+        <div class="champ"><label for="r-email">E-mail *</label><input id="r-email" type="email" name="email" required autocomplete="email"><span class="champ__erreur" aria-live="polite"></span></div>
+        <div class="champ"><label for="r-tel">Téléphone</label><input id="r-tel" type="tel" name="telephone" autocomplete="tel"></div>
+      </div>
+      <fieldset class="champ">
+        <legend>Ce qui vous intéresse</legend>
+        <div class="choix">
+          <label><input type="checkbox" name="interet" value="Combat"> Combat</label>
+          <label><input type="checkbox" name="interet" value="Artisanat"> Artisanat</label>
+          <label><input type="checkbox" name="interet" value="Campement"> Cuisine &amp; campement</label>
+          <label><input type="checkbox" name="interet" value="Couture"> Couture &amp; costumes</label>
+          <label><input type="checkbox" name="interet" value="Bénévolat"> Bénévolat pendant les fêtes</label>
+          <label><input type="checkbox" name="interet" value="Chantiers"> Week-ends chantier (travaux)</label>
+          <label><input type="checkbox" name="interet" value="Je ne sais pas encore"> Je ne sais pas encore</label>
+        </div>
+      </fieldset>
+      <div class="champ">
+        <label for="r-message">Quelques mots sur vous</label>
+        <textarea id="r-message" name="message" placeholder="Vos envies, vos questions…"></textarea>
+      </div>
+      <label class="case"><input type="checkbox" name="consentement"> <span>J'accepte que mes données soient utilisées pour être recontacté(e) par l'association. <a href="confidentialite.html">En savoir plus</a></span></label>
+      <p class="message-form" role="status" hidden></p>
+      <div><button class="btn btn--rouge" type="submit">Envoyer ma demande</button></div>
+      <p class="note">* Champs obligatoires</p>
+    </form>
+    <p class="centre note mt-2">Déjà décidé&nbsp;? <a href="{{site.helloasso}}" target="_blank" rel="noopener">Adhérez directement sur HelloAsso</a>.</p>
+  </div>
+</section>
+
+<section class="section section--alt" aria-labelledby="faq-adh-titre">
+  <div class="container--etroit">
+    <div class="entete revele"><h2 id="faq-adh-titre">Vos questions</h2></div>
+    <div class="faq revele">
+      <details><summary>Faut-il avoir un costume pour commencer&nbsp;?</summary><div><p>Non. Nous vous aidons à réaliser votre tenue, et des costumes peuvent être prêtés pour les premières fêtes.</p></div></details>
+      <details><summary>Quel est l'engagement en temps&nbsp;?</summary><div><p>Chacun donne ce qu'il peut&nbsp;: quelques week-ends par an ou un coup de main ponctuel.</p></div></details>
+      <details><summary>Les enfants peuvent-ils participer&nbsp;?</summary><div><p>Oui, les familles sont les bienvenues. Les mineurs participent sous la responsabilité d'un parent.</p></div></details>
+      <details><summary>Je n'ai pas envie de me costumer, puis-je aider&nbsp;?</summary><div><p>Bien sûr&nbsp;! Les week-ends chantier sont faits pour vous&nbsp;: on y entretient, remet en ordre et améliore le domaine, en tenue de travail.</p></div></details>
+      <details><summary>Les bénévoles sont-ils nourris pendant les Féodales&nbsp;?</summary><div><p>Oui&nbsp;! Pendant les Féodales, la Mesnie nourrit tous ses bénévoles.</p></div></details>
+      <details><summary>Faut-il apporter ses outils pour les chantiers&nbsp;?</summary><div><p>Non, tout le matériel nécessaire est sur place.</p></div></details>
+      <details><summary>Faut-il savoir se battre pour être combattant&nbsp;?</summary><div><p>Pas du tout&nbsp;: l'apprentissage se fait progressivement, avec des règles de sécurité strictes.</p></div></details>
+    </div>
+  </div>
+</section>
