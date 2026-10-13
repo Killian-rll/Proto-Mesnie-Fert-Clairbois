@@ -6,14 +6,15 @@ window.MESNIE = {
     dimanche: { ouverture: "10:00", fermeture: "18:00" }
   },
 
-  tarif: { prix: "8 €", gratuit: "Gratuit pour les moins de 12 ans" },
+  tarif: { prix: "8 €", reduit: "6 € (personnes à mobilité réduite)", pass: "12 € le pass 2 jours", gratuit: "Gratuit pour les moins de 12 ans" },
 
   lieu: {
-    nom: "Domaine de la Ferté-Clairbois",
+    nom: "Centre Médiéval de Clairbois",
     adresse: "53270 Sainte-Suzanne-et-Chammes"
   },
 
-  exceptions: {},
+  // Date du samedi quand le week-end n'est pas le 2e samedi du mois
+  exceptions: { "2027-08": "2027-08-07" },
 
   annulations: [],
 

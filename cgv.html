@@ -99,9 +99,9 @@
             </div>
             <div class="sous-menu__panneau" id="sm-feodales">
               <ul>
-                <li><a href="feodales.html" data-nav="feodales"><svg class="icon" aria-hidden="true"><use href="#i-agenda"/></svg><strong>Les Féodales</strong><small>C'est quoi, dates, tarif, accès</small></a></li>
-                <li><a href="artisans.html" data-nav="artisans"><svg class="icon" aria-hidden="true"><use href="#i-marteau"/></svg><strong>Nos artisans</strong><small>Le marché et les métiers d'antan</small></a></li>
-                <li><a href="troupes.html" data-nav="troupes"><svg class="icon" aria-hidden="true"><use href="#i-epee"/></svg><strong>Nos troupes</strong><small>Combats, cavaliers et compagnies</small></a></li>
+                <li><a href="feodales.html" data-nav="feodales">La fête, dates et tarifs</a></li>
+                <li><a href="artisans.html" data-nav="artisans">Nos artisans</a></li>
+                <li><a href="troupes.html" data-nav="troupes">Nos troupes</a></li>
               </ul>
             </div>
           </li>
@@ -114,7 +114,7 @@
       </nav>
 
       <div class="header__outils">
-        <a class="btn btn--rouge btn--petit header__cta" href="nous-rejoindre.html" data-nav="rejoindre">Nous rejoindre</a>
+        <a class="btn btn--contour btn--petit header__cta" href="nous-rejoindre.html" data-nav="rejoindre">Nous rejoindre</a>
         <button class="burger" type="button" aria-expanded="false" aria-controls="navigation" aria-label="Ouvrir le menu">
           <span class="burger__barres" aria-hidden="true"><span></span><span></span><span></span></span>
         </button>
@@ -126,10 +126,10 @@
 <section class="page-tete">
   <img class="page-tete__fond" src="assets/img/domaine-aerien.jpg" alt="" width="1920" height="1443" fetchpriority="high">
   <div class="container">
-    <nav class="fil-ariane" aria-label="Fil d'Ariane"><ol><li><a href="index.html">Accueil</a></li><li aria-current="page">Conditions de billetterie</li></ol></nav>
     <h1>Conditions de billetterie</h1>
   </div>
 </section>
+<div class="fil-barre"><div class="container"><nav class="fil-ariane" aria-label="Fil d'Ariane"><ol><li><a href="index.html">Accueil</a></li><li aria-current="page">Conditions de billetterie</li></ol></nav></div></div>
 
 <section class="section">
   <div class="container--etroit texte-long">
@@ -139,7 +139,7 @@
     <p>Les présentes conditions régissent la vente des billets d'entrée aux Féodales de Clairbois organisées par l'association La Mesnie de la Ferté-Clairbois, en ligne ou sur place.</p>
 
     <h2>2. Prix</h2>
-    <p>Le prix d'entrée est de 8&nbsp;€ par personne&nbsp;; l'entrée est gratuite pour les enfants de moins de 12 ans. Les prix sont indiqués en euros, toutes taxes comprises. <span class="a-completer">Si l'association n'est pas assujettie à la TVA, indiquer&nbsp;: «&nbsp;TVA non applicable, article 293 B du CGI&nbsp;».</span></p>
+    <p>Le prix d'entrée est de 8&nbsp;€ par personne, 6&nbsp;€ pour les personnes à mobilité réduite, et le pass 2 jours est à 12&nbsp;€&nbsp;; l'entrée est gratuite pour les enfants de moins de 12 ans. Un tarif préférentiel est proposé aux groupes sur réservation préalable. Les prix sont indiqués en euros, toutes taxes comprises. <span class="a-completer">Si l'association n'est pas assujettie à la TVA, indiquer&nbsp;: «&nbsp;TVA non applicable, article 293 B du CGI&nbsp;».</span></p>
 
     <h2>3. Réservation et paiement</h2>
     <p>Les réservations en ligne se font via la plateforme sécurisée HelloAsso, par carte bancaire. Une confirmation est envoyée par e-mail. HelloAsso peut proposer une contribution volontaire à son fonctionnement&nbsp;: elle est facultative.</p>
@@ -164,10 +164,13 @@
     <div class="container">
       <div class="footer__grille">
         <div>
-          <div class="footer__marque">
-            <img src="assets/img/embleme-clair.png" alt="" width="35" height="68" loading="lazy">
-            <span>La Mesnie de la<br>Ferté-Clairbois</span>
-          </div>
+          <a class="logo logo--clair" href="index.html" aria-label="La Mesnie de la Ferté-Clairbois — accueil">
+            <img src="assets/img/embleme-clair.png" alt="" width="29" height="56" loading="lazy">
+            <span class="logo__texte">
+              <span class="logo__petit">La Mesnie de la</span>
+              <span class="logo__grand">Ferté-Clairbois</span>
+            </span>
+          </a>
           <p>Association loi 1901 de reconstitution médiévale, organisatrice des Féodales de Clairbois à Sainte-Suzanne-et-Chammes, en Mayenne.</p>
           <div class="footer__reseaux">
             <a href="https://www.facebook.com/mesniedelaferteclairbois/" target="_blank" rel="noopener" aria-label="Facebook (nouvelle fenêtre)"><svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg></a>
@@ -198,7 +201,7 @@
         <div>
           <h2 class="footer__titre">Restons en lien</h2>
           <ul class="footer__contact">
-            <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span>Domaine de la Ferté-Clairbois<br>53270 Sainte-Suzanne-et-Chammes</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span>Centre Médiéval de Clairbois<br>53270 Sainte-Suzanne-et-Chammes</span></li>
             <li><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:lamesniedelaferteclairbois@gmail.com">lamesniedelaferteclairbois@gmail.com</a></li>
           </ul>
           <form data-formulaire data-email="lamesniedelaferteclairbois@gmail.com" data-sujet="Inscription à la lettre d'information" action="" novalidate>
@@ -222,8 +225,6 @@
       </div>
     </div>
   </footer>
-
-  <button class="taille" type="button" data-taille-btn>Aa+</button>
 
   <button class="haut" type="button" aria-label="Revenir en haut de la page">
     <svg class="icon" aria-hidden="true"><use href="#i-haut"/></svg>

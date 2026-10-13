@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.google.com; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Nous rejoindre — Les Féodales de Clairbois</title>
-  <meta name="description" content="Devenez membre de La Mesnie de la Ferté-Clairbois&nbsp;: combattant, artisan, cuisinier, couturière ou bénévole. Déroulé et formulaire de pré-inscription.">
+  <meta name="description" content="Devenez bénévole de La Mesnie de la Ferté-Clairbois&nbsp;: savoir-faire, campement, taverne, costumes, accueil ou week-ends bâtisseurs. Déroulé et formulaire de pré-inscription.">
   <!--robots-->
   <meta name="theme-color" content="#fbf8f3">
   <link rel="canonical" href="https://killian-rll.github.io/Proto-Mesnie-Fert-Clairbois/nous-rejoindre.html">
@@ -14,7 +14,7 @@
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="Les Féodales de Clairbois">
   <meta property="og:title" content="Nous rejoindre — Les Féodales de Clairbois">
-  <meta property="og:description" content="Devenez membre de La Mesnie de la Ferté-Clairbois&nbsp;: combattant, artisan, cuisinier, couturière ou bénévole. Déroulé et formulaire de pré-inscription.">
+  <meta property="og:description" content="Devenez bénévole de La Mesnie de la Ferté-Clairbois&nbsp;: savoir-faire, campement, taverne, costumes, accueil ou week-ends bâtisseurs. Déroulé et formulaire de pré-inscription.">
   <meta property="og:image" content="https://killian-rll.github.io/Proto-Mesnie-Fert-Clairbois/assets/img/mesnie-groupe.jpg">
   <link rel="icon" type="image/png" href="assets/img/embleme.png">
   <link rel="apple-touch-icon" href="assets/img/logo.png">
@@ -99,9 +99,9 @@
             </div>
             <div class="sous-menu__panneau" id="sm-feodales">
               <ul>
-                <li><a href="feodales.html" data-nav="feodales"><svg class="icon" aria-hidden="true"><use href="#i-agenda"/></svg><strong>Les Féodales</strong><small>C'est quoi, dates, tarif, accès</small></a></li>
-                <li><a href="artisans.html" data-nav="artisans"><svg class="icon" aria-hidden="true"><use href="#i-marteau"/></svg><strong>Nos artisans</strong><small>Le marché et les métiers d'antan</small></a></li>
-                <li><a href="troupes.html" data-nav="troupes"><svg class="icon" aria-hidden="true"><use href="#i-epee"/></svg><strong>Nos troupes</strong><small>Combats, cavaliers et compagnies</small></a></li>
+                <li><a href="feodales.html" data-nav="feodales">La fête, dates et tarifs</a></li>
+                <li><a href="artisans.html" data-nav="artisans">Nos artisans</a></li>
+                <li><a href="troupes.html" data-nav="troupes">Nos troupes</a></li>
               </ul>
             </div>
           </li>
@@ -114,7 +114,7 @@
       </nav>
 
       <div class="header__outils">
-        <a class="btn btn--rouge btn--petit header__cta" href="nous-rejoindre.html" data-nav="rejoindre" aria-current="page">Nous rejoindre</a>
+        <a class="btn btn--contour btn--petit header__cta" href="nous-rejoindre.html" data-nav="rejoindre" aria-current="page">Nous rejoindre</a>
         <button class="burger" type="button" aria-expanded="false" aria-controls="navigation" aria-label="Ouvrir le menu">
           <span class="burger__barres" aria-hidden="true"><span></span><span></span><span></span></span>
         </button>
@@ -126,53 +126,58 @@
 <section class="page-tete">
   <img class="page-tete__fond" src="assets/img/feodales-troupe.webp" alt="" width="1600" height="900" fetchpriority="high">
   <div class="container">
-    <nav class="fil-ariane" aria-label="Fil d'Ariane"><ol><li><a href="index.html">Accueil</a></li><li aria-current="page">Nous rejoindre</li></ol></nav>
     <h1>Rejoignez la Mesnie</h1>
     <p>Pas besoin d'être historien ni d'avoir un costume&nbsp;: il suffit d'avoir envie d'apprendre et de partager.</p>
   </div>
 </section>
+<div class="fil-barre"><div class="container"><nav class="fil-ariane" aria-label="Fil d'Ariane"><ol><li><a href="index.html">Accueil</a></li><li aria-current="page">Nous rejoindre</li></ol></nav></div></div>
 
 <section class="section" aria-labelledby="profils-titre">
   <div class="container">
     <div class="entete revele">
       <span class="surtitre">Trouvez votre place</span>
       <h2 id="profils-titre">Qui peut nous rejoindre&nbsp;?</h2>
-      <p>Tout le monde, seul, en couple ou en famille.</p>
+      <p>Tout le monde, seul, en couple ou en famille. Il y a mille façons d'aider&nbsp;: choisissez celle qui vous ressemble, ou plusieurs.</p>
     </div>
     <div class="roles">
       <a class="tuile revele" href="#formulaire">
-        <img src="assets/img/feodales-troupe.webp" alt="" width="1600" height="900" loading="lazy">
-        <h3>Combattant</h3>
-        <p>Escrime médiévale et démonstrations, avec formation à la sécurité.</p>
+        <div class="photo-manque photo-manque--fond" role="img" aria-label="Photo à fournir : un membre qui transmet son savoir au public"><svg class="icon" aria-hidden="true"><use href="#i-photo"/></svg><strong>Photo à fournir</strong><span>un membre qui transmet son savoir au public</span></div>
+        <h3>Transmettre un savoir</h3>
+        <p>Un métier ancien, un savoir-faire ou une passion pour le Moyen Âge à partager avec le public.</p>
       </a>
       <a class="tuile revele" data-delai="1" href="#formulaire">
-        <img src="assets/img/mini/domaine-atelier.jpg" alt="" width="760" height="1140" loading="lazy">
-        <h3>Artisan</h3>
-        <p>Apprendre un métier ancien ou partager le vôtre.</p>
+        <div class="photo-manque photo-manque--fond" role="img" aria-label="Photo à fournir : un membre qui anime le campement"><svg class="icon" aria-hidden="true"><use href="#i-photo"/></svg><strong>Photo à fournir</strong><span>un membre qui anime le campement</span></div>
+        <h3>Faire vivre le campement</h3>
+        <p>Monter le camp, l'animer en costume et accueillir les visiteurs sous la tente.</p>
       </a>
       <a class="tuile revele" data-delai="2" href="#formulaire">
-        <img src="assets/img/mini/feodales-campement.jpg" alt="" width="760" height="507" loading="lazy">
-        <h3>Campement</h3>
-        <p>Cuisine, couture et accueil du public pendant les fêtes.</p>
+        <div class="photo-manque photo-manque--fond" role="img" aria-label="Photo à fournir : un bénévole à la taverne ou en cuisine"><svg class="icon" aria-hidden="true"><use href="#i-photo"/></svg><strong>Photo à fournir</strong><span>un bénévole à la taverne ou en cuisine</span></div>
+        <h3>Taverne &amp; cuisine</h3>
+        <p>Tenir la taverne, préparer les repas des bénévoles et des visiteurs.</p>
       </a>
       <a class="tuile revele" href="#formulaire">
-        <img src="assets/img/mini/mesnie-groupe.jpg" alt="" width="760" height="458" loading="lazy">
-        <h3>Bénévole</h3>
-        <p>Accueil, billetterie, montage&nbsp;: un coup de main pendant les Féodales, repas offert.</p>
+        <div class="photo-manque photo-manque--fond" role="img" aria-label="Photo à fournir : un bénévole aux costumes ou à l'échoppe"><svg class="icon" aria-hidden="true"><use href="#i-photo"/></svg><strong>Photo à fournir</strong><span>un bénévole aux costumes ou à l'échoppe</span></div>
+        <h3>Costumes &amp; échoppe</h3>
+        <p>Gérer et entretenir les tenues, tenir la boutique de souvenirs.</p>
       </a>
-      <a class="tuile tuile--chantier revele" data-delai="1" href="#chantiers">
-        <img src="assets/img/domaine-aerien.jpg" alt="" width="1920" height="1443" loading="lazy">
+      <a class="tuile revele" data-delai="1" href="#formulaire">
+        <div class="photo-manque photo-manque--fond" role="img" aria-label="Photo à fournir : un bénévole à l'entrée ou à la billetterie"><svg class="icon" aria-hidden="true"><use href="#i-photo"/></svg><strong>Photo à fournir</strong><span>un bénévole à l'entrée ou à la billetterie</span></div>
+        <h3>Accueil &amp; coulisses</h3>
+        <p>L'entrée, la billetterie, le nettoyage&nbsp;: tout ce qui fait tourner la fête.</p>
+      </a>
+      <a class="tuile tuile--chantier revele" data-delai="2" href="#chantiers">
+        <div class="photo-manque photo-manque--fond" role="img" aria-label="Photo à fournir : des bénévoles en plein travaux"><svg class="icon" aria-hidden="true"><use href="#i-photo"/></svg><strong>Photo à fournir</strong><span>des bénévoles en plein travaux</span></div>
         <span class="tuile__badge">Sans costume</span>
-        <h3>Chantiers</h3>
-        <p>Des week-ends de travaux pour remettre en ordre le domaine et l'améliorer.</p>
+        <h3>Week-ends bâtisseurs</h3>
+        <p>Remettre en état et améliorer le centre médiéval, entre deux fêtes.</p>
       </a>
     </div>
 
     <div class="encart mt-3 revele" id="chantiers">
       <img src="assets/img/deco/tour.svg" alt="" width="72" height="72">
       <div>
-        <h3>Les week-ends chantier</h3>
-        <p>Pas besoin d'aimer les costumes pour nous aider&nbsp;! Plusieurs week-ends dans l'année, les bénévoles se retrouvent pour entretenir, remettre en ordre et améliorer le domaine. Tout le matériel est sur place&nbsp;: bricoleurs, jardiniers ou simples paires de bras, venez comme vous êtes&nbsp;!</p>
+        <h3>Les week-ends bâtisseurs</h3>
+        <p>Plusieurs week-ends par an, on se retrouve au centre médiéval pour réparer, entretenir et construire. Pas besoin de costume ni d'être bricoleur&nbsp;: le matériel est sur place et il y a du travail pour tout le monde.</p>
       </div>
     </div>
   </div>
@@ -210,18 +215,20 @@
         <div class="champ"><label for="r-email">E-mail *</label><input id="r-email" type="email" name="email" required autocomplete="email" maxlength="254"><span class="champ__erreur" aria-live="polite"></span></div>
         <div class="champ"><label for="r-tel">Téléphone</label><input id="r-tel" type="tel" name="telephone" autocomplete="tel" maxlength="20"></div>
       </div>
-      <fieldset class="champ">
-        <legend>Ce qui vous intéresse</legend>
-        <div class="choix">
-          <label><input type="checkbox" name="interet" value="Combat"> Combat</label>
-          <label><input type="checkbox" name="interet" value="Artisanat"> Artisanat</label>
-          <label><input type="checkbox" name="interet" value="Campement"> Cuisine &amp; campement</label>
-          <label><input type="checkbox" name="interet" value="Couture"> Couture &amp; costumes</label>
-          <label><input type="checkbox" name="interet" value="Bénévolat"> Bénévolat pendant les fêtes</label>
-          <label><input type="checkbox" name="interet" value="Chantiers"> Week-ends chantier (travaux)</label>
-          <label><input type="checkbox" name="interet" value="Je ne sais pas encore"> Je ne sais pas encore</label>
-        </div>
-      </fieldset>
+      <div class="champ">
+        <label for="r-interet">Ce qui vous intéresse</label>
+        <select id="r-interet" name="interet">
+          <option value="">Choisissez</option>
+          <option>Transmettre un savoir</option>
+          <option>Faire vivre le campement</option>
+          <option>Taverne &amp; cuisine</option>
+          <option>Costumes &amp; échoppe</option>
+          <option>Accueil, entrée, nettoyage</option>
+          <option>Week-ends bâtisseurs (travaux)</option>
+          <option>Un peu de tout</option>
+          <option>Je ne sais pas encore</option>
+        </select>
+      </div>
       <div class="champ">
         <label for="r-message">Quelques mots sur vous</label>
         <textarea id="r-message" name="message" placeholder="Vos envies, vos questions…" maxlength="5000"></textarea>
@@ -242,9 +249,9 @@
       <details><summary>Faut-il avoir un costume pour commencer&nbsp;?</summary><div><p>Non. Nous vous aidons à réaliser votre tenue, et des costumes peuvent être prêtés pour les premières fêtes.</p></div></details>
       <details><summary>Quel est l'engagement en temps&nbsp;?</summary><div><p>Chacun donne ce qu'il peut&nbsp;: quelques week-ends par an ou un coup de main ponctuel.</p></div></details>
       <details><summary>Les enfants peuvent-ils participer&nbsp;?</summary><div><p>Oui, les familles sont les bienvenues. Les mineurs participent sous la responsabilité d'un parent.</p></div></details>
-      <details><summary>Je n'ai pas envie de me costumer, puis-je aider&nbsp;?</summary><div><p>Bien sûr&nbsp;! Les week-ends chantier sont faits pour vous&nbsp;: on y entretient, remet en ordre et améliore le domaine, en tenue de travail.</p></div></details>
+      <details><summary>Je n'ai pas envie de me costumer, puis-je aider&nbsp;?</summary><div><p>Bien sûr&nbsp;! Les week-ends bâtisseurs sont faits pour vous&nbsp;: on y entretient, remet en ordre et améliore le centre médiéval, en tenue de travail.</p></div></details>
       <details><summary>Les bénévoles sont-ils nourris pendant les Féodales&nbsp;?</summary><div><p>Oui&nbsp;! Pendant les Féodales, la Mesnie nourrit tous ses bénévoles.</p></div></details>
-      <details><summary>Faut-il apporter ses outils pour les chantiers&nbsp;?</summary><div><p>Non, tout le matériel nécessaire est sur place.</p></div></details>
+      <details><summary>Faut-il apporter ses outils pour les week-ends bâtisseurs&nbsp;?</summary><div><p>Non, tout le matériel nécessaire est sur place.</p></div></details>
       <details><summary>Faut-il savoir se battre pour être combattant&nbsp;?</summary><div><p>Pas du tout&nbsp;: l'apprentissage se fait progressivement, avec des règles de sécurité strictes.</p></div></details>
     </div>
   </div>
@@ -256,10 +263,13 @@
     <div class="container">
       <div class="footer__grille">
         <div>
-          <div class="footer__marque">
-            <img src="assets/img/embleme-clair.png" alt="" width="35" height="68" loading="lazy">
-            <span>La Mesnie de la<br>Ferté-Clairbois</span>
-          </div>
+          <a class="logo logo--clair" href="index.html" aria-label="La Mesnie de la Ferté-Clairbois — accueil">
+            <img src="assets/img/embleme-clair.png" alt="" width="29" height="56" loading="lazy">
+            <span class="logo__texte">
+              <span class="logo__petit">La Mesnie de la</span>
+              <span class="logo__grand">Ferté-Clairbois</span>
+            </span>
+          </a>
           <p>Association loi 1901 de reconstitution médiévale, organisatrice des Féodales de Clairbois à Sainte-Suzanne-et-Chammes, en Mayenne.</p>
           <div class="footer__reseaux">
             <a href="https://www.facebook.com/mesniedelaferteclairbois/" target="_blank" rel="noopener" aria-label="Facebook (nouvelle fenêtre)"><svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg></a>
@@ -290,7 +300,7 @@
         <div>
           <h2 class="footer__titre">Restons en lien</h2>
           <ul class="footer__contact">
-            <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span>Domaine de la Ferté-Clairbois<br>53270 Sainte-Suzanne-et-Chammes</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span>Centre Médiéval de Clairbois<br>53270 Sainte-Suzanne-et-Chammes</span></li>
             <li><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:lamesniedelaferteclairbois@gmail.com">lamesniedelaferteclairbois@gmail.com</a></li>
           </ul>
           <form data-formulaire data-email="lamesniedelaferteclairbois@gmail.com" data-sujet="Inscription à la lettre d'information" action="" novalidate>
@@ -314,8 +324,6 @@
       </div>
     </div>
   </footer>
-
-  <button class="taille" type="button" data-taille-btn>Aa+</button>
 
   <button class="haut" type="button" aria-label="Revenir en haut de la page">
     <svg class="icon" aria-hidden="true"><use href="#i-haut"/></svg>

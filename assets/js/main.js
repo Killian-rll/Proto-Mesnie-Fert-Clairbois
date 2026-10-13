@@ -14,17 +14,6 @@
   };
   const animationsReduites = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const libellesTaille = ["Agrandir le texte", "Agrandir encore le texte", "Revenir à la taille normale"];
-  const appliquerTaille = (t) => {
-    document.documentElement.dataset.taille = t;
-    $$("[data-taille-btn]").forEach((b) => { b.setAttribute("aria-label", libellesTaille[t]); b.title = libellesTaille[t]; });
-  };
-  appliquerTaille(Number(stockage.lire("taille")) || 0);
-  $$("[data-taille-btn]").forEach((b) => b.addEventListener("click", () => {
-    const t = ((Number(document.documentElement.dataset.taille) || 0) + 1) % 3;
-    stockage.ecrire("taille", t); appliquerTaille(t);
-  }));
-
   const burger = $(".burger");
   const nav = $("#navigation");
   const mobile = window.matchMedia("(max-width: 1100px)");
@@ -65,7 +54,7 @@
   surDefilement();
   haut && haut.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
-  const diapos = $$(".hero__diapos img");
+  const diapos = $$(".hero__diapos > *");
   if (diapos.length > 1 && !animationsReduites) {
     let i = 0;
     setInterval(() => {
@@ -110,6 +99,8 @@
   const fmtH = (t) => { const [h, m] = (t || "").split(":"); return m && m !== "00" ? `${Number(h)}h${m}` : `${Number(h)}h`; };
   const H = CFG.horaires || {};
   const heuresTexte = `Samedi ${fmtH(H.samedi?.ouverture || "14:00")} – ${fmtH(H.samedi?.fermeture || "19:00")} · Dimanche ${fmtH(H.dimanche?.ouverture || "10:00")} – ${fmtH(H.dimanche?.fermeture || "18:00")}`;
+  const heuresSam = `${fmtH(H.samedi?.ouverture || "14:00")} – ${fmtH(H.samedi?.fermeture || "19:00")}`;
+  const heuresDim = `${fmtH(H.dimanche?.ouverture || "10:00")} – ${fmtH(H.dimanche?.fermeture || "18:00")}`;
   const titreDate = (f) => f.samedi.getMonth() === f.dimanche.getMonth()
     ? `Samedi ${f.samedi.getDate()} et dimanche ${f.dimanche.getDate()} ${nomMois(f.samedi)} ${f.an}`
     : `Samedi ${f.samedi.getDate()} ${nomMois(f.samedi)} et dimanche ${f.dimanche.getDate()} ${nomMois(f.dimanche)} ${f.an}`;
@@ -128,12 +119,12 @@
             <button type="button" class="date__partager" data-partager="${f.cle}" aria-label="Partager la date : ${esc(libelle)}" title="Partager"><svg class="icon" aria-hidden="true"><use href="#i-partager"/></svg></button>
           </div>`;
       return `<li class="date${classe}">
-          <span class="sr-only">${estProchaine ? "Prochaine édition : " : ""}${libelle}</span>
-          <span class="date__mois" aria-hidden="true">${nomMois(f.samedi)}</span>
+          <span class="sr-only">${estProchaine ? "Prochaine édition : " : ""}${libelle}. ${heuresTexte}</span>
+          <span class="date__mois" aria-hidden="true">${nomMois(f.samedi)} <span class="date__an">${f.an}</span></span>
           <span class="date__jours" aria-hidden="true">
-            <span class="date__jour"><strong>${f.samedi.getDate()}</strong><small>samedi</small></span>
+            <span class="date__jour"><strong>${f.samedi.getDate()}</strong><small>samedi</small><span class="date__heures">${heuresSam}</span></span>
             <span class="date__et">&amp;</span>
-            <span class="date__jour"><strong>${f.dimanche.getDate()}</strong><small>dimanche</small></span>
+            <span class="date__jour"><strong>${f.dimanche.getDate()}</strong><small>dimanche</small><span class="date__heures">${heuresDim}</span></span>
           </span>
           ${fin}
         </li>`;
@@ -178,7 +169,7 @@
     const f = fetes.find((x) => x.cle === b.dataset.partager);
     if (!f) return;
     const url = new URL("feodales.html", location.href).href;
-    const texte = `Les Féodales de Clairbois, fête médiévale le ${datesTexte(f)} au Domaine de la Ferté-Clairbois (Sainte-Suzanne-et-Chammes).`;
+    const texte = `Les Féodales de Clairbois, fête médiévale le ${datesTexte(f)} au Centre Médiéval de Clairbois (Sainte-Suzanne-et-Chammes).`;
     if (navigator.share) {
       try { await navigator.share({ title: "Les Féodales de Clairbois", text: texte, url }); } catch (err) {}
       return;
@@ -235,7 +226,7 @@
   $$("[data-carte]").forEach((zone) => {
     const b = $("button", zone);
     b && b.addEventListener("click", () => {
-      zone.innerHTML = `<iframe title="Carte d'accès au Domaine de la Ferté-Clairbois" loading="lazy"
+      zone.innerHTML = `<iframe title="Carte d'accès au Centre Médiéval de Clairbois" loading="lazy"
         src="https://www.google.com/maps?q=${encodeURIComponent(zone.dataset.carte)}&output=embed"></iframe>`;
     });
   });
@@ -265,6 +256,12 @@
       const emailLibre = $$("input[type=email]", form).find((i) => !i.closest(".champ"));
       if (emailLibre && !emailValide(emailLibre.value)) { montrer("Merci d'indiquer une adresse e-mail valide.", false); emailLibre.focus(); return; }
       if (!valide) { montrer("Certains champs sont à corriger (voir en rouge).", false); $(".champ--erreur input, .champ--erreur textarea, .champ--erreur select", form)?.focus(); return; }
+      const champFichiers = $("input[type=file]", form);
+      const avecFichiers = champFichiers && !champFichiers.closest("[hidden]");
+      if (avecFichiers) {
+        const max = Number(champFichiers.dataset.maxFichiers) || 20;
+        if (champFichiers.files.length > max) { montrer(`Vous avez choisi ${champFichiers.files.length} photos : merci d'en garder ${max} au maximum.`, false); champFichiers.focus(); return; }
+      }
       const rgpd = $("[name=consentement]", form);
       if (rgpd && !rgpd.checked) { montrer("Merci de cocher la case d'acceptation pour envoyer votre message.", false); rgpd.focus(); return; }
 
@@ -272,6 +269,7 @@
       if (piege && piege.value) { form.reset(); montrer(form.dataset.merci || "Merci ! Votre message a bien été envoyé.", true); return; }
       const donnees = new FormData(form);
       donnees.delete("site_web");
+      if (champFichiers && !avecFichiers) donnees.delete(champFichiers.name);
       for (const [k, v] of [...donnees.entries()]) if (typeof v === "string") donnees.set(k, v.trim().slice(0, 5000));
       const action = form.getAttribute("action");
       if (action) {
@@ -283,9 +281,15 @@
         return;
       }
       const lignes = [];
-      donnees.forEach((v, k) => { if (k !== "consentement" && v) lignes.push(`${k} : ${v}`); });
-      window.location.href = `mailto:${form.dataset.email}?subject=${encodeURIComponent(form.dataset.sujet || "Message depuis le site")}&body=${encodeURIComponent(lignes.join("\n"))}`;
-      montrer("Votre messagerie va s'ouvrir avec le message prêt à être envoyé.", true);
+      donnees.forEach((v, k) => { if (k !== "consentement" && typeof v === "string" && v) lignes.push(`${k} : ${v}`); });
+      const sujetChoisi = $("select[name=sujet]", form)?.value || "";
+      const destinataire = (sujetChoisi && form.dataset["email" + sujetChoisi.charAt(0).toUpperCase() + sujetChoisi.slice(1)]) || form.dataset.email;
+      const nbPhotos = avecFichiers ? champFichiers.files.length : 0;
+      if (nbPhotos) lignes.push("", `(${nbPhotos} photo${nbPhotos > 1 ? "s" : ""} à joindre à ce message)`);
+      window.location.href = `mailto:${destinataire}?subject=${encodeURIComponent(form.dataset.sujet || "Message depuis le site")}&body=${encodeURIComponent(lignes.join("\n"))}`;
+      montrer(nbPhotos
+        ? "Votre messagerie va s'ouvrir : ajoutez-y vos photos en pièces jointes avant d'envoyer."
+        : "Votre messagerie va s'ouvrir avec le message prêt à être envoyé.", true);
     });
   });
 
@@ -293,15 +297,55 @@
   const selectSujet = $("#c-sujet");
   if (sujetUrl && selectSujet && $(`option[value="${CSS.escape(sujetUrl)}"]`, selectSujet)) selectSujet.value = sujetUrl;
 
+  // Champs affichés seulement pour un sujet donné (ex. l'envoi de photos)
+  const champsConditionnels = $$("[data-si-sujet]");
+  const majChamps = () => champsConditionnels.forEach((c) => { c.hidden = !selectSujet || selectSujet.value !== c.dataset.siSujet; });
+  if (selectSujet && champsConditionnels.length) { selectSujet.addEventListener("change", majChamps); majChamps(); }
+  $$("input[type=file][data-max-fichiers]").forEach((input) => {
+    const info = $("[data-fichiers-info]", input.closest(".champ"));
+    const err = $(".champ__erreur", input.closest(".champ"));
+    const max = Number(input.dataset.maxFichiers) || 20;
+    input.addEventListener("change", () => {
+      const n = input.files.length;
+      const trop = n > max;
+      if (info) info.textContent = n ? `${n} photo${n > 1 ? "s" : ""} sélectionnée${n > 1 ? "s" : ""}.` : "";
+      if (err) err.textContent = trop ? `${max} photos au maximum : merci d'en retirer ${n - max}.` : "";
+      input.closest(".champ").classList.toggle("champ--erreur", trop);
+    });
+  });
+
+  // Questions fréquentes : ouverture et fermeture en douceur
+  if (!animationsReduites) $$(".faq details").forEach((d) => {
+    const resume = $("summary", d);
+    const corps = resume && resume.nextElementSibling;
+    if (!corps) return;
+    let anim = null;
+    resume.addEventListener("click", (e) => {
+      e.preventDefault();
+      anim && anim.cancel();
+      const ouvrir = !d.open || d.classList.contains("se-ferme");
+      d.classList.toggle("se-ferme", !ouvrir);
+      if (ouvrir) d.open = true;
+      const pb = getComputedStyle(corps).paddingBottom;
+      const h = corps.offsetHeight + "px";
+      const ferme = { height: "0px", paddingBottom: "0px", opacity: 0 };
+      const ouvert = { height: h, paddingBottom: pb, opacity: 1 };
+      corps.style.overflow = "hidden";
+      anim = corps.animate(ouvrir ? [ferme, ouvert] : [ouvert, ferme], { duration: 340, easing: "cubic-bezier(.3,.7,.2,1)" });
+      const enCours = anim;
+      const terminer = () => {
+        if (anim !== enCours) return;
+        corps.style.overflow = ""; if (!ouvrir) { d.open = false; d.classList.remove("se-ferme"); } anim = null;
+      };
+      anim.onfinish = terminer;
+      setTimeout(terminer, 400);
+    });
+  });
+
   $$("[data-annee]").forEach((el) => (el.textContent = new Date().getFullYear()));
 
   const formes = ["heaume", "banniere", "tour", "bouclier", "chateau", "fleur", "chevalier", "cavalier"];
   const graine = [...location.pathname].reduce((s, ch) => s + ch.charCodeAt(0), 0);
-  const recoins = [
-    { top: "9%", left: "5%", r: -12 }, { top: "12%", right: "6%", r: 10 },
-    { bottom: "8%", left: "9%", r: 8 }, { bottom: "12%", right: "8%", r: -8 },
-    { top: "38%", left: "3%", r: 14 }, { top: "30%", right: "3%", r: -14 }
-  ];
   const cacher = (parent, classe, forme, style = {}) => {
     const el = document.createElement("span");
     el.className = "cache " + classe;
@@ -310,16 +354,22 @@
     Object.assign(el.style, style);
     parent.prepend(el);
   };
-  $$("main > section.section:not(.section--serree):not(#partenaires)").forEach((s, i) => {
-    const clair = s.classList.contains("section--sombre") ? "-clair" : "";
-    cacher(s, `cache--${(graine + i) % 2 ? "gauche" : "droite"}${i % 3 === 1 ? " cache--haut" : ""}`,
-      formes[(graine + i * 3) % formes.length] + clair);
-    if ((graine + i) % 2 === 0) {
-      const p = recoins[(graine + i * 5) % recoins.length];
-      const { r, ...pos } = p;
-      cacher(s, "cache--dedans", formes[(graine + i * 3 + 4) % formes.length] + clair, { ...pos, "--r": r + "deg" });
-    }
-  });
+  // Un décor tous les 700 px environ, en alternant gauche et droite, pour qu'aucune longue section ne reste vide
+  const poserDecors = () => {
+    $$("main .cache").forEach((el) => el.remove());
+    let n = graine;
+    let alea = graine * 9301 + 49297;
+    const hasard = () => { alea = (alea * 9301 + 49297) % 233280; return alea / 233280; };
+    $$("main > section.section:not(.section--serree):not(#partenaires)").forEach((s) => {
+      const clair = s.classList.contains("section--sombre") ? "-clair" : "";
+      const nb = Math.max(1, Math.round(s.offsetHeight / 700));
+      for (let k = 0; k < nb; k++, n++) {
+        cacher(s, `cache--${n % 2 ? "gauche" : "droite"}`, formes[(n * 3) % formes.length] + clair, { top: `${((k + 0.12 + hasard() * 0.76) / nb) * 100}%` });
+      }
+    });
+  };
+  poserDecors();
+  window.addEventListener("load", poserDecors);
   const pied = $(".footer");
   pied && cacher(pied, "cache--pied", "heaume-clair");
 

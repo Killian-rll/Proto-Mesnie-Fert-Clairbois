@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.google.com; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Galerie photos — Les Féodales de Clairbois</title>
-  <meta name="description" content="Les Féodales de Clairbois et le Domaine de la Ferté-Clairbois en images.">
+  <meta name="description" content="Les Féodales de Clairbois et le Centre Médiéval de Clairbois en images.">
   <!--robots-->
   <meta name="theme-color" content="#fbf8f3">
   <link rel="canonical" href="https://killian-rll.github.io/Proto-Mesnie-Fert-Clairbois/galerie.html">
@@ -14,7 +14,7 @@
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="Les Féodales de Clairbois">
   <meta property="og:title" content="Galerie photos — Les Féodales de Clairbois">
-  <meta property="og:description" content="Les Féodales de Clairbois et le Domaine de la Ferté-Clairbois en images.">
+  <meta property="og:description" content="Les Féodales de Clairbois et le Centre Médiéval de Clairbois en images.">
   <meta property="og:image" content="https://killian-rll.github.io/Proto-Mesnie-Fert-Clairbois/assets/img/domaine-aerien.jpg">
   <link rel="icon" type="image/png" href="assets/img/embleme.png">
   <link rel="apple-touch-icon" href="assets/img/logo.png">
@@ -99,9 +99,9 @@
             </div>
             <div class="sous-menu__panneau" id="sm-feodales">
               <ul>
-                <li><a href="feodales.html" data-nav="feodales"><svg class="icon" aria-hidden="true"><use href="#i-agenda"/></svg><strong>Les Féodales</strong><small>C'est quoi, dates, tarif, accès</small></a></li>
-                <li><a href="artisans.html" data-nav="artisans"><svg class="icon" aria-hidden="true"><use href="#i-marteau"/></svg><strong>Nos artisans</strong><small>Le marché et les métiers d'antan</small></a></li>
-                <li><a href="troupes.html" data-nav="troupes"><svg class="icon" aria-hidden="true"><use href="#i-epee"/></svg><strong>Nos troupes</strong><small>Combats, cavaliers et compagnies</small></a></li>
+                <li><a href="feodales.html" data-nav="feodales">La fête, dates et tarifs</a></li>
+                <li><a href="artisans.html" data-nav="artisans">Nos artisans</a></li>
+                <li><a href="troupes.html" data-nav="troupes">Nos troupes</a></li>
               </ul>
             </div>
           </li>
@@ -114,7 +114,7 @@
       </nav>
 
       <div class="header__outils">
-        <a class="btn btn--rouge btn--petit header__cta" href="nous-rejoindre.html" data-nav="rejoindre">Nous rejoindre</a>
+        <a class="btn btn--contour btn--petit header__cta" href="nous-rejoindre.html" data-nav="rejoindre">Nous rejoindre</a>
         <button class="burger" type="button" aria-expanded="false" aria-controls="navigation" aria-label="Ouvrir le menu">
           <span class="burger__barres" aria-hidden="true"><span></span><span></span><span></span></span>
         </button>
@@ -126,18 +126,18 @@
 <section class="page-tete">
   <img class="page-tete__fond" src="assets/img/domaine-aerien.jpg" alt="" width="1920" height="1443" fetchpriority="high">
   <div class="container">
-    <nav class="fil-ariane" aria-label="Fil d'Ariane"><ol><li><a href="index.html">Accueil</a></li><li aria-current="page">Galerie</li></ol></nav>
     <h1>Galerie photos</h1>
     <p>Cliquez sur une photo pour l'agrandir, puis utilisez les flèches pour passer à la suivante.</p>
   </div>
 </section>
+<div class="fil-barre"><div class="container"><nav class="fil-ariane" aria-label="Fil d'Ariane"><ol><li><a href="index.html">Accueil</a></li><li aria-current="page">Galerie</li></ol></nav></div></div>
 
 <section class="section" aria-label="Photos">
   <div class="container">
     <div class="filtres" data-filtres="#galerie" role="group" aria-label="Filtrer les photos">
       <button type="button" class="filtre" data-filtre="tout" aria-pressed="true">Toutes</button>
       <button type="button" class="filtre" data-filtre="feodales" aria-pressed="false">Les Féodales</button>
-      <button type="button" class="filtre" data-filtre="domaine" aria-pressed="false">Le domaine</button>
+      <button type="button" class="filtre" data-filtre="domaine" aria-pressed="false">Le centre médiéval</button>
     </div>
     <div class="galerie" id="galerie">
       <figure class="galerie__item revele" data-cat="feodales">
@@ -147,10 +147,10 @@
         <figcaption>La Mesnie et ses invités devant la tour en bois</figcaption>
       </figure>
       <figure class="galerie__item revele" data-cat="domaine">
-        <button type="button" data-grand="assets/img/domaine-aerien.jpg" data-legende="Le Domaine de la Ferté-Clairbois vu du ciel" aria-label="Agrandir&nbsp;: Le Domaine de la Ferté-Clairbois vu du ciel">
-          <img src="assets/img/mini/domaine-aerien.jpg" alt="Le Domaine de la Ferté-Clairbois vu du ciel" loading="lazy" width="760" height="571">
+        <button type="button" data-grand="assets/img/domaine-aerien.jpg" data-legende="Le Centre Médiéval de Clairbois vu du ciel" aria-label="Agrandir&nbsp;: Le Centre Médiéval de Clairbois vu du ciel">
+          <img src="assets/img/mini/domaine-aerien.jpg" alt="Le Centre Médiéval de Clairbois vu du ciel" loading="lazy" width="760" height="571">
         </button>
-        <figcaption>Le Domaine de la Ferté-Clairbois vu du ciel</figcaption>
+        <figcaption>Le Centre Médiéval de Clairbois vu du ciel</figcaption>
       </figure>
       <figure class="galerie__item revele" data-cat="feodales">
         <button type="button" data-grand="assets/img/feodales-joute.webp" data-legende="Les cavaliers dans la lice" aria-label="Agrandir&nbsp;: Les cavaliers dans la lice">
@@ -177,8 +177,8 @@
         <figcaption>Le chemin du donjon</figcaption>
       </figure>
       <figure class="galerie__item revele" data-cat="feodales">
-        <button type="button" data-grand="assets/img/mesnie-groupe.jpg" data-legende="Les membres de la Mesnie dans la cour du domaine" aria-label="Agrandir&nbsp;: Les membres de la Mesnie dans la cour du domaine">
-          <img src="assets/img/mini/mesnie-groupe.jpg" alt="Les membres de la Mesnie dans la cour du domaine" loading="lazy" width="760" height="458">
+        <button type="button" data-grand="assets/img/mesnie-groupe.jpg" data-legende="Les membres de la Mesnie dans la cour du centre médiéval" aria-label="Agrandir&nbsp;: Les membres de la Mesnie dans la cour du centre médiéval">
+          <img src="assets/img/mini/mesnie-groupe.jpg" alt="Les membres de la Mesnie dans la cour du centre médiéval" loading="lazy" width="760" height="458">
         </button>
         <figcaption>Les membres de la Mesnie dans la cour du domaine</figcaption>
       </figure>
@@ -188,15 +188,9 @@
         </button>
         <figcaption>La salle des Lions, prête pour le banquet</figcaption>
       </figure>
-      <figure class="galerie__item revele" data-cat="feodales">
-        <button type="button" data-grand="assets/img/feodales-public.webp" data-legende="Les visiteurs au cœur des Féodales" aria-label="Agrandir&nbsp;: Les visiteurs au cœur des Féodales">
-          <img src="assets/img/feodales-public.webp" alt="Les visiteurs au cœur des Féodales" loading="lazy" width="380" height="480">
-        </button>
-        <figcaption>Les visiteurs au cœur des Féodales</figcaption>
-      </figure>
       <figure class="galerie__item revele" data-cat="domaine">
-        <button type="button" data-grand="assets/img/domaine-chapelle.jpg" data-legende="La chapelle du domaine" aria-label="Agrandir&nbsp;: La chapelle du domaine">
-          <img src="assets/img/mini/domaine-chapelle.jpg" alt="La chapelle du domaine" loading="lazy" width="760" height="1359">
+        <button type="button" data-grand="assets/img/domaine-chapelle.jpg" data-legende="La chapelle du centre médiéval" aria-label="Agrandir&nbsp;: La chapelle du centre médiéval">
+          <img src="assets/img/mini/domaine-chapelle.jpg" alt="La chapelle du centre médiéval" loading="lazy" width="760" height="1359">
         </button>
         <figcaption>La chapelle du domaine</figcaption>
       </figure>
@@ -214,10 +208,13 @@
     <div class="container">
       <div class="footer__grille">
         <div>
-          <div class="footer__marque">
-            <img src="assets/img/embleme-clair.png" alt="" width="35" height="68" loading="lazy">
-            <span>La Mesnie de la<br>Ferté-Clairbois</span>
-          </div>
+          <a class="logo logo--clair" href="index.html" aria-label="La Mesnie de la Ferté-Clairbois — accueil">
+            <img src="assets/img/embleme-clair.png" alt="" width="29" height="56" loading="lazy">
+            <span class="logo__texte">
+              <span class="logo__petit">La Mesnie de la</span>
+              <span class="logo__grand">Ferté-Clairbois</span>
+            </span>
+          </a>
           <p>Association loi 1901 de reconstitution médiévale, organisatrice des Féodales de Clairbois à Sainte-Suzanne-et-Chammes, en Mayenne.</p>
           <div class="footer__reseaux">
             <a href="https://www.facebook.com/mesniedelaferteclairbois/" target="_blank" rel="noopener" aria-label="Facebook (nouvelle fenêtre)"><svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg></a>
@@ -248,7 +245,7 @@
         <div>
           <h2 class="footer__titre">Restons en lien</h2>
           <ul class="footer__contact">
-            <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span>Domaine de la Ferté-Clairbois<br>53270 Sainte-Suzanne-et-Chammes</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span>Centre Médiéval de Clairbois<br>53270 Sainte-Suzanne-et-Chammes</span></li>
             <li><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:lamesniedelaferteclairbois@gmail.com">lamesniedelaferteclairbois@gmail.com</a></li>
           </ul>
           <form data-formulaire data-email="lamesniedelaferteclairbois@gmail.com" data-sujet="Inscription à la lettre d'information" action="" novalidate>
@@ -272,8 +269,6 @@
       </div>
     </div>
   </footer>
-
-  <button class="taille" type="button" data-taille-btn>Aa+</button>
 
   <button class="haut" type="button" aria-label="Revenir en haut de la page">
     <svg class="icon" aria-hidden="true"><use href="#i-haut"/></svg>
