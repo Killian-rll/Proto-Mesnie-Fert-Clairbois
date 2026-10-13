@@ -7,6 +7,8 @@ export const SITE = {
   url: "https://killian-rll.github.io/Proto-Mesnie-Fert-Clairbois",
   nom: "La Mesnie de la Ferté-Clairbois",
   email: "lamesniedelaferteclairbois@gmail.com",
+  emailArtisans: "marcheclairbois53@gmail.com",
+  emailTroupes: "troupeclairbois53@gmail.com",
   facebook: "https://www.facebook.com/mesniedelaferteclairbois/",
   helloasso: "https://www.helloasso.com/associations/la-mesnie-de-la-ferte-clairbois",
   domaine: "https://domaineferteclairbois.fr/",

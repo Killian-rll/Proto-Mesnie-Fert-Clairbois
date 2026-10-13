@@ -27,9 +27,6 @@
   --section: clamp(4.5rem, 9vw, 7.5rem);
 }
 
-html[data-taille="1"] { font-size: 112.5%; }
-html[data-taille="2"] { font-size: 125%; }
-
 *, *::before, *::after { box-sizing: border-box; }
 [hidden] { display: none !important; }
 html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 20px); -webkit-text-size-adjust: 100%; }
@@ -132,12 +129,6 @@ p:last-child { margin-bottom: 0; }
 .sous-menu__panneau small { font-size: .88rem; color: var(--muted); line-height: 1.35; }
 
 .header__outils { display: flex; align-items: center; gap: .6rem; }
-.taille {
-  width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid var(--line); background: var(--surface);
-  font: 700 .95rem var(--f-sans); color: var(--ink); cursor: pointer; transition: border-color .2s;
-}
-.taille:hover { border-color: var(--ink); }
-.taille span { font-size: .75em; }
 
 .burger { display: none; width: 48px; height: 48px; border-radius: 50%; border: 0; background: var(--ink); color: #fff; cursor: pointer; place-items: center; }
 .burger__barres { width: 20px; height: 14px; position: relative; display: block; }
@@ -177,7 +168,6 @@ p:last-child { margin-bottom: 0; }
   .logo img { height: 46px; }
   .logo__grand { font-size: 1.4rem; }
   .logo__petit { font-size: .64rem; }
-  .taille { width: 42px; height: 42px; }
 }
 
 .surtitre {
@@ -710,7 +700,6 @@ button, input, select, textarea { font-family: inherit; }
 .btn--petit, .date__agenda, .filtre { min-height: 44px; padding: 0 1rem; }
 .btn--petit { font-size: .95rem; }
 .footer form input, .footer form .btn { min-height: 52px; }
-.taille { width: 44px; height: 44px; font-size: 1rem; }
 .burger { width: 44px; height: 44px; }
 
 .lien { min-height: 44px; }
@@ -961,14 +950,6 @@ h2 { font-size: clamp(1.875rem, 4.2vw, 3.2rem); }
   .date__partager { width: 44px; height: 44px; }
 }
 
-.taille {
-  position: fixed; left: 1.2rem; bottom: 1.2rem; z-index: 90;
-  width: 52px; height: 52px; border-radius: 50%; border: 1.5px solid var(--line);
-  background: var(--surface); color: var(--ink); font: 700 1rem var(--f-sans);
-  box-shadow: var(--shadow-lg); cursor: pointer; transition: background .2s, color .2s, border-color .2s;
-}
-.taille:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
-@media (max-width: 560px) { .taille { width: 52px; height: 52px; } }
 
 .sous-menu__tete { border-radius: 999px; transition: background-color .2s; }
 .sous-menu__tete:hover, .sous-menu.is-open .sous-menu__tete { background: var(--bg-2); }
@@ -988,3 +969,181 @@ h2 { font-size: clamp(1.875rem, 4.2vw, 3.2rem); }
 .section--dates { padding-top: calc(var(--section) * .6); }
 
 .piege { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; opacity: 0; }
+
+/* ───────── Retouches octobre 2026 ───────── */
+
+/* Sous-menu : simple liste, sans pictos ni sous-titres */
+@media (min-width: 1101px) {
+  .sous-menu__panneau {
+    left: 0; transform: translateY(6px); width: max-content; min-width: 14rem; padding: .4rem;
+    border-radius: 8px; border-top: 3px solid var(--gold); box-shadow: 0 18px 36px -22px rgba(42,29,20,.55);
+  }
+  .sous-menu.is-open .sous-menu__panneau { transform: none; }
+  .sous-menu__panneau ul { gap: 0; }
+  .nav .sous-menu__panneau a { display: block; padding: .7rem 1rem; border-radius: 5px; font-weight: 500; }
+  .nav .sous-menu__panneau li + li a { border-top: 1px solid var(--line); border-radius: 0 0 5px 5px; }
+  .nav .sous-menu__panneau a:hover { background: var(--bg-2); color: var(--red); }
+}
+.nav .sous-menu__panneau a[aria-current="page"] { color: var(--red); }
+
+/* Bouton « Nous rejoindre » de l'en-tête : contour discret */
+.header__cta.btn--contour { background: transparent; border-color: var(--brun); color: var(--brun); }
+.header__cta.btn--contour:hover { background: var(--brun); color: #fff; }
+
+/* Pied de page : même logo que la barre de navigation */
+.logo--clair { margin: 0 0 1.2rem; }
+.logo--clair .logo__petit { color: #cbbfb0; }
+.logo--clair .logo__grand { color: #fff; }
+.footer a.logo--clair:hover { color: #fff; }
+
+/* Créneaux du pied de page : dessinés par-dessus la section précédente, quelle que soit sa couleur */
+.footer { margin-top: 0; }
+.footer::before { z-index: 2; }
+
+/* Fil d'Ariane sous l'en-tête photo */
+.fil-barre { background: var(--bg) var(--grain); border-bottom: 1px solid var(--line); padding: .85rem 0; }
+.fil-barre .fil-ariane ol { justify-content: flex-start; margin: 0; color: var(--muted); font-size: .95rem; }
+.fil-barre .fil-ariane li + li::before { content: "›"; opacity: 1; color: var(--gold); }
+.fil-barre .fil-ariane a { color: var(--brun); }
+.fil-barre .fil-ariane a:hover { color: var(--red); }
+.fil-barre + .section { padding-top: calc(var(--section) * .75); }
+
+/* Accueil : présentation des Féodales */
+.section--intro { padding-bottom: calc(var(--section) * .8); }
+.section--intro p { font-size: 1.2rem; }
+.section--intro h2::after { content: ""; display: block; width: 140px; height: 16px; margin: 1.1rem auto 0; background: var(--ornement) center / contain no-repeat; }
+
+/* Prochaine édition : plus lisible */
+.barre-verre__label { font-size: .92rem; letter-spacing: .14em; opacity: .95; }
+.barre-verre__date { font-size: clamp(1.7rem, 2.6vw, 2rem); }
+.barre-verre__info .icon { width: 50px; height: 50px; padding: 12px; }
+
+/* Cartes de dates : année, horaires, tailles en rem pour suivre l'agrandissement du texte */
+.dates { max-width: 76rem; }
+.date { flex: 1 1 13rem; max-width: 14.5rem; }
+.date__mois { font-size: 1.75rem; }
+.date__an { font-size: .72em; opacity: .9; }
+.date__jours { padding-bottom: 1.25rem; }
+.date__heures { display: block; margin-top: .3rem; font-size: .875rem; font-weight: 600; color: var(--brun); white-space: nowrap; }
+@media (max-width: 680px) {
+  .date { flex-basis: 9.5rem; max-width: 12rem; }
+  .date__mois { font-size: 1.4rem; }
+  .date__heures { font-size: .8rem; }
+}
+
+/* Serment : mêmes médaillons que le récit des Féodales */
+.voeu { grid-template-columns: 60px 1fr; align-items: start; }
+.voeu__num {
+  width: 60px; height: 60px; display: grid; place-items: center; border-radius: 50%;
+  border: 2px solid var(--gold); background: rgba(255,255,255,.04); color: var(--gold-2);
+  font-family: var(--f-serif); font-weight: 700; font-size: 1.5rem; line-height: 1; letter-spacing: .02em; font-variant-numeric: lining-nums;
+}
+
+/* Flèche de retour en haut : visible sur clair comme sur brun */
+.haut { background: var(--red); border: 2px solid var(--gold-2); color: #fff; }
+.haut:hover { background: var(--red-2); }
+
+
+/* Nous rejoindre : six façons d'aider, deux rangées de trois */
+.roles .tuile:nth-child(4), .roles .tuile:nth-child(5) { grid-column: span 2; }
+.roles .tuile h3 { font-size: 1.6rem; }
+@media (max-width: 900px) { .roles .tuile:nth-child(n) { grid-column: span 1; } }
+@media (max-width: 560px) { .roles .tuile:nth-child(n) { grid-column: auto; } }
+
+/* Troupes et artisans : fiches par trois */
+.troupes-grille { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: none; }
+.fiche-troupe__corps { padding: 1.5rem; }
+.fiche-troupe h2 { font-size: 1.6rem; margin-bottom: .5rem; }
+.fiche-troupe p { margin-bottom: 1rem; }
+.fiche-troupe .etiquettes { margin-top: auto; }
+@media (max-width: 1000px) { .troupes-grille { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .troupes-grille { grid-template-columns: 1fr; } }
+
+/* Décors : grands, à cheval sur les bords, immobiles */
+.cache, .cache--pied, .filigrane { transition: none; pointer-events: none; }
+.cache { width: 340px; height: 340px; opacity: .07; bottom: 8%; }
+.cache--gauche { left: -150px; }
+.cache--droite { right: -150px; }
+.cache--haut { bottom: auto; top: 8%; }
+.cache--pied { width: 260px; height: 260px; right: -90px; bottom: 60px; }
+.cache--gauche:hover { transform: rotate(14deg); opacity: .07; }
+.cache--droite:hover { transform: rotate(-14deg); opacity: .07; }
+.cache--pied:hover { transform: rotate(-10deg); opacity: .07; }
+.filigrane:hover { opacity: .07; transform: rotate(-10deg); }
+@media (max-width: 700px) {
+  .cache { width: 200px; height: 200px; opacity: .06; }
+  .cache--gauche { left: -95px; } .cache--droite { right: -95px; }
+  .cache--pied { width: 160px; height: 160px; right: -60px; }
+}
+@media (hover: none) { .cache:active { opacity: .07; } }
+
+/* Formulaire : envoi de photos */
+.champ small { font-weight: 400; color: var(--muted); }
+.champ__aide { margin: 0; font-size: .95rem; color: var(--muted); }
+input[type="file"] { width: 100%; font: inherit; color: var(--ink); padding: .8rem; background: var(--surface); border: 1.5px dashed #d9c5a8; border-radius: var(--r-sm); cursor: pointer; }
+input[type="file"]::file-selector-button { font: 600 .95rem var(--f-sans); margin-right: 1rem; padding: .6rem 1rem; border: 0; border-radius: 999px; background: var(--brun); color: #fff; cursor: pointer; }
+.info-carte p { overflow-wrap: anywhere; }
+
+/* Questions fréquentes : pendant la fermeture animée, le « + » revient tout de suite */
+.faq details.se-ferme summary::after {
+  transform: translateY(-50%);
+  background: linear-gradient(currentColor, currentColor) center / 12px 2px no-repeat, linear-gradient(currentColor, currentColor) center / 2px 12px no-repeat, var(--bg-2);
+}
+.faq summary::after { transition: transform .3s ease, background-color .3s ease; }
+
+/* Le décor du pied de page ne doit pas élargir la page */
+.footer { overflow-x: clip; }
+
+/* Texte agrandi (bouton « A A ») : rien ne doit déborder ni se chevaucher */
+.footer__grille > * { min-width: 0; }
+.footer__contact a, .footer__contact span { overflow-wrap: anywhere; }
+
+
+
+/* Sous-menu : sans liseré doré */
+@media (min-width: 1101px) {
+  .sous-menu__panneau { border-top: 1px solid var(--line); }
+  .nav .sous-menu__panneau li + li a { border-top-color: rgba(44,32,23,.08); }
+}
+
+/* Pied de page : l'adresse e-mail tient sur une seule ligne */
+.footer__contact a { overflow-wrap: normal; white-space: nowrap; font-size: .875rem; }
+
+/* Décors répartis sur la hauteur de chaque section (position donnée par le script) */
+main .cache { bottom: auto; margin-top: -170px; }
+@media (max-width: 700px) { main .cache { margin-top: -100px; } }
+
+/* Pied de page : e-mail à la même taille que le reste, sur une ligne, enveloppe alignée */
+.footer__contact a { font-size: inherit; }
+.footer__grille { grid-template-columns: 1.3fr .9fr .9fr 1.7fr; }
+@media (max-width: 1180px) { .footer__grille { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 760px) { .footer__grille { grid-template-columns: 1fr; gap: 2.2rem; } }
+@media (max-width: 400px) { .footer__contact a { font-size: .875rem; } }
+@media (max-width: 350px) { .footer__contact a { font-size: .78rem; } }
+
+/* Contact : les trois adresses dans un seul bloc */
+.mails { margin: .2rem 0 0; display: grid; gap: .55rem; }
+.mails dt { font-size: .875rem; color: var(--muted); line-height: 1.3; }
+.mails dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+
+/* Repère « Photo à fournir » : à remplacer par la vraie photo */
+.photo-manque {
+  width: 100%; aspect-ratio: 4 / 3; display: grid; place-content: center; justify-items: center; gap: .35rem;
+  padding: 1.2rem; text-align: center; border-radius: var(--r);
+  background: #efe2cc var(--grain); border: 2px dashed var(--gold); color: var(--brun);
+}
+.photo-manque .icon { width: 2.2rem; height: 2.2rem; }
+.photo-manque strong { font: 700 .82rem var(--f-sans); letter-spacing: .16em; text-transform: uppercase; }
+.photo-manque span { font-size: .98rem; line-height: 1.35; max-width: 22rem; color: var(--ink-2); }
+.actu__image .photo-manque { height: 100%; aspect-ratio: auto; border-radius: 0; }
+.fiche-troupe > .photo-manque { aspect-ratio: 16 / 10; border-radius: 0; border-width: 0 0 2px; }
+/* en fond d'un bandeau ou d'une tuile */
+.photo-manque--fond {
+  position: absolute; inset: 0; z-index: -2; aspect-ratio: auto; border-radius: 0; border: 0;
+  place-content: start center; padding-top: 1.4rem;
+  background: var(--brun) var(--grain); color: #fff;
+}
+.photo-manque--fond span { color: #f3e6d0; }
+.tuile .photo-manque--fond { border: 2px dashed var(--gold-2); border-radius: var(--r); }
+.hero__diapos .photo-manque { opacity: 0; transition: opacity 1.6s ease; padding-top: 2rem; }
+.hero__diapos .photo-manque.is-active { opacity: 1; }
