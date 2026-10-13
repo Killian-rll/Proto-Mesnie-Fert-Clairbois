@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import crypto from "node:crypto";
 import path from "node:path";
 import { spawn } from "node:child_process";
 import { fileURLToPath } from "node:url";
@@ -52,6 +53,9 @@ fs.rmSync(dist, { recursive: true, force: true });
 fs.mkdirSync(dist, { recursive: true });
 copier(path.join(ici, "assets"), path.join(dist, "assets"));
 
+const versions = {};
+const version = (f) => (versions[f] ??= crypto.createHash("sha1").update(fs.readFileSync(path.join(ici, f))).digest("hex").slice(0, 8));
+
 const pages = fs.readdirSync(path.join(src, "pages")).filter((f) => f.endsWith(".html"));
 const urls = [];
 for (const f of pages) {
@@ -64,6 +68,8 @@ for (const f of pages) {
     page: f
   };
   let html = rendre(layout, { ...vars, contenu: rendre(corps, vars) });
+  // Numéro de version sur les feuilles de style et scripts : le navigateur recharge les fichiers modifiés
+  html = html.replace(/(assets\/(?:css|js)\/[\w.-]+\.(?:css|js))"/g, (_, f) => `${f}?v=${version(f)}"`);
   if (meta.nav) html = html.replaceAll(`data-nav="${meta.nav}"`, `data-nav="${meta.nav}" aria-current="page"`);
   if (meta.groupe === "feodales") html = html.replace('class="sous-menu__lien"', 'class="sous-menu__lien is-actif"');
   if (meta.noindex === "oui") html = html.replace("<!--robots-->", '<meta name="robots" content="noindex">');
