@@ -64,7 +64,7 @@ for (const f of pages) {
     site: SITE,
     titre: meta.titre ? `${meta.titre} — Les Féodales de Clairbois` : "Les Féodales de Clairbois · Fête médiévale en Mayenne",
     description: meta.description || "",
-    image: meta.image || "assets/img/feodales-troupe.webp",
+    image: meta.image || "assets/img/mesnie-groupe.jpg",
     page: f
   };
   let html = rendre(layout, { ...vars, contenu: rendre(corps, vars) });
